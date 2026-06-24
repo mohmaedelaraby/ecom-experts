@@ -1,0 +1,179 @@
+{
+  "steps": [
+    {
+      "id": "cameras",
+      "stepNumber": 1,
+      "title": "Choose your cameras",
+      "icon": "camera",
+      "category": "cameras",
+      "products": [
+        {
+          "id": "wyze-cam-v4",
+          "name": "Wyze Cam v4",
+          "description": "The clearest Wyze Cam ever made.",
+          "image": "/products/wyze-cam-v4.svg",
+          "learnMoreUrl": "#",
+          "badge": "Save 22%",
+          "compareAtPrice": 35.98,
+          "price": 27.98,
+          "variants": [
+            { "id": "white", "label": "White", "swatch": "#f2f2f2" },
+            { "id": "grey", "label": "Grey", "swatch": "#9a9a9a" },
+            { "id": "black", "label": "Black", "swatch": "#1c1c1c" }
+          ],
+          "defaultVariantId": "white",
+          "initialQuantities": { "white": 1 }
+        },
+        {
+          "id": "wyze-cam-pan-v3",
+          "name": "Wyze Cam Pan v3",
+          "description": "360° pan and 180° tilt security camera.",
+          "image": "/products/wyze-cam-pan-v3.svg",
+          "learnMoreUrl": "#",
+          "badge": "Save 12%",
+          "compareAtPrice": 39.98,
+          "price": 34.98,
+          "variants": [
+            { "id": "white", "label": "White", "swatch": "#f2f2f2" },
+            { "id": "black", "label": "Black", "swatch": "#1c1c1c" }
+          ],
+          "defaultVariantId": "white",
+          "initialQuantities": { "white": 2 }
+        },
+        {
+          "id": "wyze-cam-floodlight-v2",
+          "name": "Wyze Cam Floodlight v2",
+          "description": "2K floodlight camera with dual-light coverage for your garage.",
+          "image": "/products/wyze-cam-floodlight-v2.svg",
+          "learnMoreUrl": "#",
+          "badge": null,
+          "compareAtPrice": null,
+          "price": 89.98,
+          "variants": [
+            { "id": "white", "label": "White", "swatch": "#f2f2f2" },
+            { "id": "black", "label": "Black", "swatch": "#1c1c1c" }
+          ],
+          "defaultVariantId": "white",
+          "initialQuantities": {}
+        },
+        {
+          "id": "wyze-duo-cam-doorbell",
+          "name": "Wyze Duo Cam Doorbell",
+          "description": "Two cameras, two views. Double the porch protection.",
+          "image": "/products/wyze-duo-cam-doorbell.svg",
+          "learnMoreUrl": "#",
+          "badge": null,
+          "compareAtPrice": null,
+          "price": 89.98,
+          "variants": [],
+          "defaultVariantId": null,
+          "initialQuantities": {}
+        },
+        {
+          "id": "wyze-battery-cam-pro",
+          "name": "Wyze Battery Cam Pro",
+          "description": "Protect anywhere. See everything in 2.5K HDR. No power outlet or electrician needed.",
+          "image": "/products/wyze-battery-cam-pro.svg",
+          "learnMoreUrl": "#",
+          "badge": null,
+          "compareAtPrice": null,
+          "price": 89.98,
+          "variants": [],
+          "defaultVariantId": null,
+          "initialQuantities": {}
+        }
+      ]
+    },
+    {
+      "id": "plan",
+      "stepNumber": 2,
+      "title": "Choose your plan",
+      "icon": "shield",
+      "category": "plan",
+      "products": [
+        {
+          "id": "cam-unlimited",
+          "name": "Cam Unlimited",
+          "description": "Call as low as $9.99/mo. Unlimited cloud recording for every camera.",
+          "image": "/products/cam-unlimited.svg",
+          "learnMoreUrl": "#",
+          "badge": null,
+          "compareAtPrice": 12.99,
+          "price": 9.99,
+          "billingPeriod": "mo",
+          "variants": [],
+          "defaultVariantId": null,
+          "initialQuantities": { "default": 1 },
+          "lockedQuantity": true
+        }
+      ]
+    },
+    {
+      "id": "sensors",
+      "stepNumber": 3,
+      "title": "Choose your sensors",
+      "icon": "radio",
+      "category": "sensors",
+      "products": [
+        {
+          "id": "wyze-sense-motion-sensor",
+          "name": "Wyze Sense Motion Sensor",
+          "description": "Detects motion and alerts you the moment it happens.",
+          "image": "/products/wyze-sense-motion-sensor.svg",
+          "learnMoreUrl": "#",
+          "badge": null,
+          "compareAtPrice": null,
+          "price": 9.99,
+          "variants": [],
+          "defaultVariantId": null,
+          "initialQuantities": { "default": 2 }
+        },
+        {
+          "id": "wyze-sense-hub",
+          "name": "Wyze Sense Hub (Required)",
+          "description": "The brains of your sensor network. Required for sensors to work.",
+          "image": "/products/wyze-sense-hub.svg",
+          "learnMoreUrl": "#",
+          "badge": null,
+          "compareAtPrice": 29.98,
+          "price": 0,
+          "priceLabel": "FREE",
+          "variants": [],
+          "defaultVariantId": null,
+          "initialQuantities": { "default": 1 }
+        }
+      ]
+    },
+    {
+      "id": "accessories",
+      "stepNumber": 4,
+      "title": "Add extra protection",
+      "icon": "plus-circle",
+      "category": "accessories",
+      "products": [
+        {
+          "id": "wyze-microsd-256",
+          "name": "Wyze MicroSD Card (256GB)",
+          "description": "Local backup storage for your cameras.",
+          "image": "/products/wyze-microsd-256.svg",
+          "learnMoreUrl": "#",
+          "badge": null,
+          "compareAtPrice": null,
+          "price": 41.96,
+          "variants": [],
+          "defaultVariantId": null,
+          "initialQuantities": { "default": 2 }
+        }
+      ]
+    }
+  ],
+  "review": {
+    "title": "Your security system",
+    "description": "Review your personalized protection system designed to keep what matters most safe.",
+    "shipping": { "label": "Fast Shipping", "price": 5.99, "priceLabel": null },
+    "guarantee": { "label": "100% Satisfaction Guaranteed", "sublabel": "30-day hassle-free returns. If you're not totally in love with the product, we will refund you 100%." },
+    "financing": { "label": "Call as low as $19.99/mo" },
+    "checkoutLabel": "Checkout",
+    "saveForLaterLabel": "Save my system for later"
+  }
+}

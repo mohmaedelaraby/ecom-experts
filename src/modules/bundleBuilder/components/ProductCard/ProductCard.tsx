@@ -1,0 +1,131 @@
+import { useCallback, useMemo } from 'react';
+import { QuantityStepper } from '../Stepper/QuantityStepper';
+import { useBundleBuilderStore } from '../../shares/store/bundleBuilder.store';
+import { formatCurrency } from '../../shares/utils/bundleBuilder.utils';
+import type { Product } from '../../shares/interfaces/bundleBuilder.interfaces';
+
+interface ProductCardProps {
+  product: Product;
+  stepId: string;
+}
+
+function ProductCard({ product, stepId }: ProductCardProps) {
+  const hasVariants = product.variants.length > 0;
+
+  const activeVariantId = useBundleBuilderStore((state) =>
+    state.getActiveVariantId(product.id),
+  );
+  const setActiveVariantId = useBundleBuilderStore(
+    (state) => state.setActiveVariantId,
+  );
+  const quantity = useBundleBuilderStore((state) =>
+    state.getQuantity(product.id, activeVariantId),
+  );
+  const setQuantity = useBundleBuilderStore((state) => state.setQuantity);
+
+  const isLocked = product.lockedQuantity === true;
+
+  const handleSelectVariant = useCallback(
+    (variantId: string) => {
+      setActiveVariantId(product.id, variantId);
+    },
+    [product.id, setActiveVariantId],
+  );
+
+  const handleQuantityChange = useCallback(
+    (nextQuantity: number) => {
+      setQuantity(product.id, activeVariantId, nextQuantity);
+    },
+    [product.id, activeVariantId, setQuantity],
+  );
+
+  const isSelected = quantity > 0;
+
+  const priceLabel = useMemo(() => {
+    if (product.priceLabel) {
+      return product.priceLabel;
+    }
+    return formatCurrency(product.price);
+  }, [product.price, product.priceLabel]);
+
+  return (
+    <div
+      className={`bundleBuilder-productCard ${
+        isSelected ? 'bundleBuilder-productCard--selected' : ''
+      }`}
+      data-step-id={stepId}
+      data-product-id={product.id}
+    >
+      {product.badge && (
+        <span className="bundleBuilder-productBadge">{product.badge}</span>
+      )}
+
+      <div className="bundleBuilder-productImageWrap">
+        <img
+          className="bundleBuilder-productImage"
+          src={product.image}
+          alt={product.name}
+          loading="lazy"
+        />
+      </div>
+
+      <h3 className="bundleBuilder-productTitle">{product.name}</h3>
+      <p className="bundleBuilder-productDescription">{product.description}</p>
+
+      <a
+        className="bundleBuilder-learnMoreLink"
+        href={product.learnMoreUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Learn More
+      </a>
+
+      {hasVariants && (
+        <div className="bundleBuilder-variantChipRow" role="group" aria-label="Color">
+          {product.variants.map((variant) => (
+            <button
+              key={variant.id}
+              type="button"
+              className={`bundleBuilder-variantChip ${
+                variant.id === activeVariantId
+                  ? 'bundleBuilder-variantChip--active'
+                  : ''
+              }`}
+              style={{ backgroundColor: variant.swatch }}
+              aria-label={variant.label}
+              aria-pressed={variant.id === activeVariantId}
+              onClick={() => handleSelectVariant(variant.id)}
+            />
+          ))}
+        </div>
+      )}
+
+      <div className="bundleBuilder-productFooter">
+        <QuantityStepper
+          quantity={quantity}
+          onChange={handleQuantityChange}
+          disabled={isLocked}
+          label={`${product.name} quantity`}
+        />
+
+        <div className="bundleBuilder-productPricing">
+          {product.compareAtPrice != null && (
+            <span className="bundleBuilder-comparePrice">
+              {formatCurrency(product.compareAtPrice)}
+            </span>
+          )}
+          <span
+            className={`bundleBuilder-activePrice ${
+              product.priceLabel ? 'bundleBuilder-activePrice--free' : ''
+            }`}
+          >
+            {priceLabel}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export { ProductCard };
