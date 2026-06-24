@@ -14,6 +14,10 @@
   box-shadow: 0 0 0 1px #4E2FD2B2;
 }
 
+.bundleBuilder-productCard--selected .bundleBuilder-quantityStepper {
+  border-color: #1F1F1F;
+}
+
 .bundleBuilder-productBadge {
   position: absolute;
   top: 12px;
@@ -83,8 +87,8 @@
 }
 
 .bundleBuilder-variantChip--active {
-  border-color: #5b4fe5;
-  box-shadow: 0 0 0 2px rgba(91, 79, 229, 0.25);
+  border-color: #1F1F1F;
+  box-shadow: 0 0 0 2px rgba(31, 31, 31, 0.25);
 }
 
 .bundleBuilder-productFooter {

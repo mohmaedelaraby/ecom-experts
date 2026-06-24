@@ -62,10 +62,12 @@ function AccordionStep({ step }: AccordionStepProps) {
         aria-expanded={isOpen}
         aria-controls={`bundleBuilder-step-panel-${step.id}`}
       >
-        <span className="bundleBuilder-accordionHeaderLeft">
+        <span className="bundleBuilder-stepEyebrowRow">
           <span className="bundleBuilder-stepEyebrow">
             STEP {step.stepNumber} OF 4
           </span>
+        </span>
+        <span className="bundleBuilder-accordionHeaderLeft">
           <span className="bundleBuilder-stepTitleRow">
             <img
               className="bundleBuilder-stepIcon"
@@ -77,32 +79,32 @@ function AccordionStep({ step }: AccordionStepProps) {
             />
             <span className="bundleBuilder-stepTitle">{step.title}</span>
           </span>
-        </span>
-        <span className="bundleBuilder-accordionHeaderRight">
-          {isOpen ? (
-            <>
-              <span className="bundleBuilder-selectedCount">
-                {selectedCount} selected
-              </span>
+          <span className="bundleBuilder-accordionHeaderRight">
+            {isOpen ? (
+              <>
+                <span className="bundleBuilder-selectedCount">
+                  {selectedCount} selected
+                </span>
+                <img
+                  className="bundleBuilder-accordionChevron bundleBuilder-accordionChevron--up"
+                  src={chevronIcon}
+                  width={20}
+                  height={20}
+                  alt=""
+                  aria-hidden="true"
+                />
+              </>
+            ) : (
               <img
-                className="bundleBuilder-accordionChevron bundleBuilder-accordionChevron--up"
+                className="bundleBuilder-accordionChevron"
                 src={chevronIcon}
                 width={20}
                 height={20}
                 alt=""
                 aria-hidden="true"
               />
-            </>
-          ) : (
-            <img
-              className="bundleBuilder-accordionChevron"
-              src={chevronIcon}
-              width={20}
-              height={20}
-              alt=""
-              aria-hidden="true"
-            />
-          )}
+            )}
+          </span>
         </span>
       </button>
 

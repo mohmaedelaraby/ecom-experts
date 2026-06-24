@@ -1,6 +1,6 @@
 .bundleBuilder-accordionStep {
   border: none;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #1F1F1F;
   border-radius: 0;
 }
 
@@ -19,9 +19,8 @@
 .bundleBuilder-accordionHeader {
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  flex-direction: column;
+  gap: 12px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -31,10 +30,21 @@
   color: inherit;
 }
 
+.bundleBuilder-stepEyebrowRow {
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.bundleBuilder-accordionStep--open .bundleBuilder-stepEyebrowRow {
+  border-bottom: 1px solid #1F1F1F;
+}
+
 .bundleBuilder-accordionHeaderLeft {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .bundleBuilder-stepEyebrow {
