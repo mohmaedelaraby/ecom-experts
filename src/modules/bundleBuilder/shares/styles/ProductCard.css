@@ -117,3 +117,59 @@
 .bundleBuilder-activePrice--free {
   color: #2fa364;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bundleBuilder-productCard {
+    padding: 10px;
+  }
+
+  .bundleBuilder-productBadge {
+    top: 8px;
+    left: 8px;
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+
+  .bundleBuilder-productImageWrap {
+    height: 80px;
+    margin-bottom: 8px;
+  }
+
+  .bundleBuilder-productTitle {
+    font-size: 12px;
+    margin: 0 0 2px;
+  }
+
+  .bundleBuilder-productDescription {
+    font-size: 11px;
+    margin: 0 0 4px;
+  }
+
+  .bundleBuilder-learnMoreLink {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .bundleBuilder-variantChipRow {
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .bundleBuilder-variantChip {
+    width: 18px;
+    height: 18px;
+  }
+
+  .bundleBuilder-productFooter {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .bundleBuilder-comparePrice {
+    font-size: 10px;
+  }
+
+  .bundleBuilder-activePrice {
+    font-size: 12px;
+  }
+}
