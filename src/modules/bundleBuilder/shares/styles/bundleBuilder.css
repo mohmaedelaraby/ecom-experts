@@ -39,7 +39,9 @@
 .bundleBuilder-accordionColumn {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .bundleBuilder-reviewColumn {
