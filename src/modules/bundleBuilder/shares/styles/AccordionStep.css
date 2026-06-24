@@ -1,0 +1,124 @@
+.bundleBuilder-accordionStep {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bundleBuilder-accordionStep--open {
+  border-color: #5b4fe5;
+}
+
+.bundleBuilder-accordionHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #EDF4FF;
+  border: none;
+  cursor: pointer;
+  padding: 18px 20px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.bundleBuilder-accordionHeaderLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bundleBuilder-stepEyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #8a8a8a;
+  text-transform: uppercase;
+}
+
+.bundleBuilder-stepTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bundleBuilder-stepIcon {
+  flex-shrink: 0;
+}
+
+.bundleBuilder-accordionChevron {
+  flex-shrink: 0;
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+
+.bundleBuilder-accordionChevron--up {
+  transform: rotate(0deg);
+}
+
+.bundleBuilder-stepTitle {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bundleBuilder-accordionHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #5b4fe5;
+  flex-shrink: 0;
+}
+
+.bundleBuilder-selectedCount {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5b4fe5;
+}
+
+.bundleBuilder-accordionBody {
+  padding: 0 20px 20px;
+  background: #EDF4FF;
+}
+
+.bundleBuilder-productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 640px) {
+  .bundleBuilder-productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .bundleBuilder-productGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bundleBuilder-nextButtonContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bundleBuilder-nextButton {
+  background: transparent;
+  color: #4E2FD2;
+  border: 1px solid #4E2FD2;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.bundleBuilder-nextButton:hover {
+  background: #4a3fd0;
+}

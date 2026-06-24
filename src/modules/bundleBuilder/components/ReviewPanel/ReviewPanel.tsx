@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Truck } from 'lucide-react';
 import { QuantityStepper } from '../Stepper/QuantityStepper';
-import satisfactionBadgeIcon from '../../../../assets/icons/Satisfaction Badge-05 1.svg';
+import satisfactionBadgeIcon from '../../../../assets/icons/Satisfaction Badge-05 1.png';
 import {
   useBundleBuilderStore,
   computeReviewLineItems,
@@ -9,6 +9,7 @@ import {
 } from '../../shares/store/bundleBuilder.store';
 import { formatCurrency } from '../../shares/utils/bundleBuilder.utils';
 import type { ReviewLineItem } from '../../shares/interfaces/bundleBuilder.interfaces';
+import '../../shares/styles/ReviewPanel.css';
 
 const CATEGORY_LABELS: Record<string, string> = {
   cameras: 'Cameras',
@@ -118,8 +119,6 @@ function ReviewPanel() {
         <div className="bundleBuilder-guaranteeBlock">
           <img
             src={satisfactionBadgeIcon}
-            width={20}
-            height={20}
             alt=""
             aria-hidden="true"
             className="bundleBuilder-guaranteeIcon"

@@ -1,0 +1,49 @@
+.bundleBuilder-quantityStepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bundleBuilder-quantityStepper--disabled {
+  opacity: 0.5;
+}
+
+.bundleBuilder-stepperButton {
+  background: #f7f7f7;
+  border: none;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #1f1f1f;
+}
+
+.bundleBuilder-stepperButton:disabled {
+  cursor: not-allowed;
+  color: #c0c0c0;
+}
+
+.bundleBuilder-stepperButton:hover:not(:disabled) {
+  background: #ececec;
+}
+
+.bundleBuilder-stepperValue {
+  min-width: 28px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bundleBuilder-quantityStepper--small .bundleBuilder-stepperButton {
+  width: 22px;
+  height: 22px;
+}
+
+.bundleBuilder-quantityStepper--small .bundleBuilder-stepperValue {
+  min-width: 22px;
+  font-size: 12px;
+}

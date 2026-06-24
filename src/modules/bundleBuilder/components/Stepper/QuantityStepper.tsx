@@ -1,4 +1,5 @@
 import { Minus, Plus } from 'lucide-react';
+import '../../shares/styles/QuantityStepper.css';
 
 interface QuantityStepperProps {
   quantity: number;

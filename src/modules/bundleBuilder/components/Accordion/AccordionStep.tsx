@@ -7,6 +7,7 @@ import shieldIcon from '../../../../assets/icons/logo_hms_new 1.svg';
 import radioIcon from '../../../../assets/icons/Group 1417.svg';
 import plusCircleIcon from '../../../../assets/icons/Frame 1419.svg';
 import chevronIcon from '../../../../assets/icons/carrot-up.svg';
+import '../../shares/styles/AccordionStep.css';
 
 interface AccordionStepProps {
   step: Step;

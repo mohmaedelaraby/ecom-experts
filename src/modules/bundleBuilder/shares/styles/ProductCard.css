@@ -1,0 +1,119 @@
+.bundleBuilder-productCard {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bundleBuilder-productCard--selected {
+  border-color: #4E2FD2B2;
+  box-shadow: 0 0 0 1px #4E2FD2B2;
+}
+
+.bundleBuilder-productBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #5b4fe5;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.bundleBuilder-productImageWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  margin-bottom: 12px;
+}
+
+.bundleBuilder-productImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.bundleBuilder-productTitle {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.bundleBuilder-productDescription {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin: 0 0 6px;
+  flex-grow: 1;
+}
+
+.bundleBuilder-learnMoreLink {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5b4fe5;
+  text-decoration: none;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.bundleBuilder-learnMoreLink:hover {
+  text-decoration: underline;
+}
+
+.bundleBuilder-variantChipRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.bundleBuilder-variantChip {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  border: 2px solid #e5e5e5;
+  cursor: pointer;
+  padding: 0;
+}
+
+.bundleBuilder-variantChip--active {
+  border-color: #5b4fe5;
+  box-shadow: 0 0 0 2px rgba(91, 79, 229, 0.25);
+}
+
+.bundleBuilder-productFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.bundleBuilder-productPricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.bundleBuilder-comparePrice {
+  font-size: 12px;
+  color: #9a9a9a;
+  text-decoration: line-through;
+}
+
+.bundleBuilder-activePrice {
+  font-size: 15px;
+  font-weight: 700;
+  color: #5b4fe5;
+}
+
+.bundleBuilder-activePrice--free {
+  color: #2fa364;
+}

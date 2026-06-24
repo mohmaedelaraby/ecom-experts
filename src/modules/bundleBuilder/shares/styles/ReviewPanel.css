@@ -1,0 +1,202 @@
+.bundleBuilder-reviewPanel {
+  background: #EDF4FF;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.bundleBuilder-reviewTitle {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.bundleBuilder-reviewDescription {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin: 0 0 20px;
+}
+
+.bundleBuilder-reviewLineItems {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.bundleBuilder-reviewGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bundleBuilder-reviewGroupTitle {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8a8a8a;
+  margin: 0;
+}
+
+.bundleBuilder-reviewLine {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bundleBuilder-reviewThumb {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fafafa;
+  flex-shrink: 0;
+}
+
+.bundleBuilder-reviewLineInfo {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.bundleBuilder-reviewLineName {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bundleBuilder-reviewLinePrice {
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 60px;
+  text-align: right;
+}
+
+.bundleBuilder-reviewExtras {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bundleBuilder-reviewRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #4a4a4a;
+}
+
+.bundleBuilder-reviewRowLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bundleBuilder-reviewRow--financing {
+  color: #6b6b6b;
+  font-size: 12px;
+}
+
+.bundleBuilder-guaranteeBlock {
+  display: flex;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.bundleBuilder-guaranteeIcon {
+  flex-shrink: 0;
+}
+
+.bundleBuilder-guaranteeLabel {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 2px;
+}
+
+.bundleBuilder-guaranteeSublabel {
+  font-size: 12px;
+  color: #6b6b6b;
+  margin: 0;
+}
+
+.bundleBuilder-totalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bundleBuilder-totalLabel {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.bundleBuilder-totalValues {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.bundleBuilder-totalCompare {
+  font-size: 13px;
+  color: #9a9a9a;
+  text-decoration: line-through;
+}
+
+.bundleBuilder-totalFinal {
+  font-size: 18px;
+  font-weight: 800;
+  color: #5b4fe5;
+}
+
+.bundleBuilder-savingsCallout {
+  font-size: 13px;
+  color: #2fa364;
+  font-weight: 600;
+  margin: 0;
+}
+
+.bundleBuilder-checkoutButton {
+  width: 100%;
+  background: #5b4fe5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bundleBuilder-checkoutButton:hover {
+  background: #4a3fd0;
+}
+
+.bundleBuilder-saveForLaterButton {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5b4fe5;
+  cursor: pointer;
+}
+
+.bundleBuilder-saveForLaterButton:hover {
+  background: #f7f6ff;
+}
+
+.bundleBuilder-savedMessage {
+  text-align: center;
+  font-size: 12px;
+  color: #2fa364;
+  margin: 0;
+}

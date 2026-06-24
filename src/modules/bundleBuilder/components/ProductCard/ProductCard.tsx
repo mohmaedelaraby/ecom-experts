@@ -3,6 +3,7 @@ import { QuantityStepper } from '../Stepper/QuantityStepper';
 import { useBundleBuilderStore } from '../../shares/store/bundleBuilder.store';
 import { formatCurrency } from '../../shares/utils/bundleBuilder.utils';
 import type { Product } from '../../shares/interfaces/bundleBuilder.interfaces';
+import '../../shares/styles/ProductCard.css';
 
 interface ProductCardProps {
   product: Product;
