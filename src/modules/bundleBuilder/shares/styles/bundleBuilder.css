@@ -1,12 +1,5 @@
 .bundleBuilder-root {
-  font-family:
-    system-ui,
-    -apple-system,
-    'Segoe UI',
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
+  font-family: var(--font);
   color: #1f1f1f;
   max-width: 1280px;
   margin: 0 auto;
