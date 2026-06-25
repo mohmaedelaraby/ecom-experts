@@ -102,7 +102,6 @@ function ProductCard({ product, stepId }: ProductCardProps) {
                       ? 'bundleBuilder-variantCard--active'
                       : ''
                   }`}
-                  aria-pressed={variant.id === activeVariantId}
                   onClick={() => handleSelectVariant(variant.id)}
                 >
                   {variant.image && (
