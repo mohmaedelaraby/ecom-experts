@@ -10,7 +10,7 @@
 
 .bundleBuilder-accordionStep.bundleBuilder-accordionStep--open {
   background: #EDF4FF;
-  border: 1px solid #5b4fe5;
+  border: 1px solid #4E2FD2;
   border-radius: 12px;
   margin: 8px;
   overflow: hidden;
@@ -24,7 +24,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 18px 20px;
+  padding: 15px 0px;
   text-align: left;
   font: inherit;
   color: inherit;
@@ -32,7 +32,9 @@
 
 .bundleBuilder-stepEyebrowRow {
   width: 100%;
-  padding-bottom: 12px;
+  padding-bottom: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .bundleBuilder-accordionStep--open .bundleBuilder-stepEyebrowRow {
@@ -40,6 +42,7 @@
 }
 
 .bundleBuilder-accordionHeaderLeft {
+  padding: 0px 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -49,9 +52,8 @@
 
 .bundleBuilder-stepEyebrow {
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: #8a8a8a;
+  font-weight: 400;
+  color: #484848;
   text-transform: uppercase;
 }
 
@@ -76,40 +78,42 @@
 }
 
 .bundleBuilder-stepTitle {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 400;
+  color:#0B0D10;
 }
 
 .bundleBuilder-accordionHeaderRight {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #5b4fe5;
+  color: #4E2FD2;
   flex-shrink: 0;
 }
 
 .bundleBuilder-selectedCount {
   font-size: 14px;
-  font-weight: 600;
-  color: #5b4fe5;
+  font-weight: 400;
+  color: #4E2FD2;
 }
 
 .bundleBuilder-accordionBody {
-  padding: 0 20px 20px;
+  padding: 0 0px 20px;
   background: transparent;
 }
 
 .bundleBuilder-productGrid {
+  padding: 0px 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-bottom: 18px;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .bundleBuilder-productGrid {
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    gap: 15px;
   }
 }
 

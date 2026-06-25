@@ -59,7 +59,6 @@ function AccordionStep({ step }: AccordionStepProps) {
         type="button"
         className="bundleBuilder-accordionHeader"
         onClick={handleToggle}
-        aria-expanded={isOpen}
         aria-controls={`bundleBuilder-step-panel-${step.id}`}
       >
         <span className="bundleBuilder-stepEyebrowRow">
@@ -72,8 +71,8 @@ function AccordionStep({ step }: AccordionStepProps) {
             <img
               className="bundleBuilder-stepIcon"
               src={iconSrc}
-              width={20}
-              height={20}
+              width={26}
+              height={26}
               alt=""
               aria-hidden="true"
             />
@@ -88,8 +87,8 @@ function AccordionStep({ step }: AccordionStepProps) {
                 <img
                   className="bundleBuilder-accordionChevron bundleBuilder-accordionChevron--up"
                   src={chevronIcon}
-                  width={20}
-                  height={20}
+                  width={12}
+                  height={12}
                   alt=""
                   aria-hidden="true"
                 />
@@ -98,8 +97,8 @@ function AccordionStep({ step }: AccordionStepProps) {
               <img
                 className="bundleBuilder-accordionChevron"
                 src={chevronIcon}
-                width={20}
-                height={20}
+                width={12}
+                height={12}
                 alt=""
                 aria-hidden="true"
               />
