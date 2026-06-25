@@ -11,15 +11,16 @@
           "id": "wyze-cam-v4",
           "name": "Wyze Cam v4",
           "description": "The clearest Wyze Cam ever made.",
-          "image": "/products/wyze-cam-v4.svg",
+          "image": "/products/wyze-cam-floodlight-v2.png",
           "learnMoreUrl": "#",
           "badge": "Save 22%",
           "compareAtPrice": 35.98,
           "price": 27.98,
           "variants": [
-            { "id": "white", "label": "White", "swatch": "#f2f2f2", "image": "/products/wyze-cam-v4.svg" },
-            { "id": "grey", "label": "Grey", "swatch": "#9a9a9a", "image": "/products/wyze-cam-v4.svg" },
-            { "id": "black", "label": "Black", "swatch": "#1c1c1c", "image": "/products/wyze-cam-v4.svg" }
+           
+            { "id": "white", "label": "White", "swatch": "#f2f2f2", "image": "/products/wyze-cam-floodlight-v2.png" },
+            { "id": "black", "label": "Black", "swatch": "#1c1c1c", "image": "/products/wyze-duo-cam-doorbell.png" },
+           { "id": "gray", "label": "Gray", "swatch": "#9a9a9a", "image": "/products/wyze-battery-cam-pro.png" }
           ],
           "defaultVariantId": "white",
           "initialQuantities": { "white": 1 }
@@ -28,14 +29,14 @@
           "id": "wyze-cam-pan-v3",
           "name": "Wyze Cam Pan v3",
           "description": "360° pan and 180° tilt security camera.",
-          "image": "/products/wyze-cam-pan-v3.svg",
+          "image": "/products/wyze-cam-pan-v3.png",
           "learnMoreUrl": "#",
           "badge": "Save 12%",
           "compareAtPrice": 39.98,
           "price": 34.98,
           "variants": [
-            { "id": "white", "label": "White", "swatch": "#f2f2f2", "image": "/products/wyze-cam-pan-v3.svg" },
-            { "id": "black", "label": "Black", "swatch": "#1c1c1c", "image": "/products/wyze-cam-pan-v3.svg" }
+            { "id": "white", "label": "White", "swatch": "#f2f2f2", "image": "/products/wyze-cam-pan-v3.png" },
+            { "id": "black", "label": "Black", "swatch": "#1c1c1c", "image": "/products/wyze-duo-cam-doorbell.png" }
           ],
           "defaultVariantId": "white",
           "initialQuantities": { "white": 2 }
@@ -44,14 +45,14 @@
           "id": "wyze-cam-floodlight-v2",
           "name": "Wyze Cam Floodlight v2",
           "description": "2K floodlight camera with dual-light coverage for your garage.",
-          "image": "/products/wyze-cam-floodlight-v2.svg",
+          "image": "/products/wyze-cam-floodlight-v2.png",
           "learnMoreUrl": "#",
           "badge": null,
           "compareAtPrice": null,
           "price": 89.98,
           "variants": [
-            { "id": "white", "label": "White", "swatch": "#f2f2f2", "image": "/products/wyze-cam-floodlight-v2.svg" },
-            { "id": "black", "label": "Black", "swatch": "#1c1c1c", "image": "/products/wyze-cam-floodlight-v2.svg" }
+            { "id": "white", "label": "White", "swatch": "#f2f2f2", "image": "/products/wyze-cam-floodlight-v2.png" },
+            { "id": "black", "label": "Black", "swatch": "#1c1c1c", "image": "/products/wyze-duo-cam-doorbell.png" }
           ],
           "defaultVariantId": "white",
           "initialQuantities": {}
@@ -60,7 +61,7 @@
           "id": "wyze-duo-cam-doorbell",
           "name": "Wyze Duo Cam Doorbell",
           "description": "Two cameras, two views. Double the porch protection.",
-          "image": "/products/wyze-duo-cam-doorbell.svg",
+          "image": "/products/wyze-duo-cam-doorbell.png",
           "learnMoreUrl": "#",
           "badge": null,
           "compareAtPrice": null,
@@ -73,12 +74,15 @@
           "id": "wyze-battery-cam-pro",
           "name": "Wyze Battery Cam Pro",
           "description": "Protect anywhere. See everything in 2.5K HDR. No power outlet or electrician needed.",
-          "image": "/products/wyze-battery-cam-pro.svg",
+          "image": "/products/wyze-battery-cam-pro.png",
           "learnMoreUrl": "#",
           "badge": null,
           "compareAtPrice": null,
           "price": 89.98,
-          "variants": [],
+           "variants": [
+            { "id": "white", "label": "White", "swatch": "#f2f2f2", "image": "/products/wyze-battery-cam-pro.png" },
+            { "id": "black", "label": "Black", "swatch": "#1c1c1c", "image": "/products/wyze-duo-cam-doorbell.png" }
+          ],
           "defaultVariantId": null,
           "initialQuantities": {}
         }
@@ -119,7 +123,7 @@
           "id": "wyze-sense-motion-sensor",
           "name": "Wyze Sense Motion Sensor",
           "description": "Detects motion and alerts you the moment it happens.",
-          "image": "/products/wyze-sense-motion-sensor.svg",
+          "image": "/products/wyze-sense-motion-sensor.png",
           "learnMoreUrl": "#",
           "badge": null,
           "compareAtPrice": null,
@@ -132,7 +136,7 @@
           "id": "wyze-sense-hub",
           "name": "Wyze Sense Hub (Required)",
           "description": "The brains of your sensor network. Required for sensors to work.",
-          "image": "/products/wyze-sense-hub.svg",
+          "image": "/products/wyze-sense-hub.png",
           "learnMoreUrl": "#",
           "badge": null,
           "compareAtPrice": 29.98,
@@ -155,7 +159,7 @@
           "id": "wyze-microsd-256",
           "name": "Wyze MicroSD Card (256GB)",
           "description": "Local backup storage for your cameras.",
-          "image": "/products/wyze-microsd-256.svg",
+          "image": "/products/wyze-microsd-256.png",
           "learnMoreUrl": "#",
           "badge": null,
           "compareAtPrice": null,

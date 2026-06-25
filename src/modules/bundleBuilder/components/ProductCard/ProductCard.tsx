@@ -26,6 +26,16 @@ function ProductCard({ product, stepId }: ProductCardProps) {
 
   const isLocked = product.lockedQuantity === true;
 
+  const activeImage = useMemo(() => {
+    if (!hasVariants) {
+      return product.image;
+    }
+    const activeVariant = product.variants.find(
+      (variant) => variant.id === activeVariantId,
+    );
+    return activeVariant?.image ?? product.image;
+  }, [hasVariants, product.variants, product.image, activeVariantId]);
+
   const handleSelectVariant = useCallback(
     (variantId: string) => {
       setActiveVariantId(product.id, variantId);
@@ -66,7 +76,7 @@ function ProductCard({ product, stepId }: ProductCardProps) {
           <div className="bundleBuilder-productImageWrap">
             <img
               className="bundleBuilder-productImage"
-              src={product.image}
+              src={activeImage}
               alt={product.name}
               loading="lazy"
             />

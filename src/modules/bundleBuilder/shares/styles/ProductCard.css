@@ -6,6 +6,7 @@
   padding: 11px;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -35,6 +36,7 @@
   display: flex;
   align-items: center;
   gap: 19px;
+  flex: 1;
 }
 
 .bundleBuilder-productLeft {
@@ -104,17 +106,18 @@
 .bundleBuilder-variantCard {
   display: flex;
   align-items: center;
-  gap: 6px;
   background: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  padding: 4px 8px;
+  border: 0.5px solid #CCCCCC;
+  border-radius: 2px;
+  gap: 4px;
+  padding: 5px;
   cursor: pointer;
 }
 
 .bundleBuilder-variantCard--active {
-  border-color: #1F1F1F;
-  box-shadow: 0 0 0 2px rgba(31, 31, 31, 0.15);
+  border-color: #0AA288;
+  box-shadow: 0 0 0 2px rgba(10, 162, 136, 0.15);
+    background-color:#1DF0BB0A;
 }
 
 .bundleBuilder-variantCardImageWrap {
@@ -140,7 +143,7 @@
 }
 
 .bundleBuilder-variantCardLabel {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
   color: #1F1F1F;
 }
@@ -161,14 +164,15 @@
 }
 
 .bundleBuilder-comparePrice {
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 400;
   color: #D8392B;
   text-decoration: line-through;
 }
 
 .bundleBuilder-activePrice {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 400;
   color: #575757;
 }
 
@@ -176,9 +180,52 @@
   color: #2fa364;
 }
 
+@media (max-width: 767px) {
+  .bundleBuilder-productMain {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .bundleBuilder-productLeft {
+    width: 100%;
+  }
+
+  .bundleBuilder-productImageWrap {
+    height: 140px;
+  }
+
+  .bundleBuilder-productRight {
+    text-align: center;
+  }
+
+  .bundleBuilder-productDescription {
+    text-align: center;
+  }
+
+  .bundleBuilder-variantCardRow {
+    justify-content: center;
+  }
+
+  .bundleBuilder-productFooter {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bundleBuilder-productPricing {
+    align-items: center;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .bundleBuilder-productCard {
     padding: 10px;
+  }
+
+  .bundleBuilder-productMain {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
   }
 
   .bundleBuilder-productBadge {
@@ -189,11 +236,32 @@
   }
 
   .bundleBuilder-productLeft {
-    width: 72px;
+    width: 100%;
   }
 
   .bundleBuilder-productImageWrap {
-    height: 72px;
+    height: 100px;
+  }
+
+  .bundleBuilder-productRight {
+    text-align: center;
+  }
+
+  .bundleBuilder-productDescription {
+    text-align: center;
+  }
+
+  .bundleBuilder-variantCardRow {
+    justify-content: center;
+  }
+
+  .bundleBuilder-productFooter {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bundleBuilder-productPricing {
+    align-items: center;
   }
 
   .bundleBuilder-productTitle {
