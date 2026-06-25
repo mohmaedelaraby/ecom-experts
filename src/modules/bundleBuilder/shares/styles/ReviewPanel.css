@@ -109,7 +109,17 @@
 .bundleBuilder-reviewRowLabel {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #EAF3FC;
+  font-weight: 600;
+  color: #1F1F1F;
+}
+
+.bundleBuilder-reviewRowLabel img {
+  width: 41px;
+  height: 41px;
 }
 
 .bundleBuilder-reviewRow--financing {

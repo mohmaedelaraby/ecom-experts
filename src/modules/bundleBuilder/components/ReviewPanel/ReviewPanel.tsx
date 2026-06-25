@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
-import { Truck } from 'lucide-react';
 import { QuantityStepper } from '../Stepper/QuantityStepper';
 import satisfactionBadgeIcon from '../../../../assets/icons/Satisfaction Badge-05 1.png';
+import shippingIcon from '../../../../assets/icons/Wyze Sense Keypad.png';
 import {
   useBundleBuilderStore,
   computeReviewLineItems,
@@ -108,7 +108,8 @@ function ReviewPanel() {
       <div className="bundleBuilder-reviewExtras">
         <div className="bundleBuilder-reviewRow">
           <span className="bundleBuilder-reviewRowLabel">
-            <Truck size={16} aria-hidden="true" /> {REVIEW_CONTENT.shipping.label}
+            <img src={shippingIcon} alt="" aria-hidden="true" />
+            {REVIEW_CONTENT.shipping.label}
           </span>
           <span className="bundleBuilder-reviewRowValue">
             {REVIEW_CONTENT.shipping.priceLabel ??
