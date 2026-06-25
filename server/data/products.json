@@ -17,9 +17,9 @@
           "compareAtPrice": 35.98,
           "price": 27.98,
           "variants": [
-            { "id": "white", "label": "White", "swatch": "#f2f2f2" },
-            { "id": "grey", "label": "Grey", "swatch": "#9a9a9a" },
-            { "id": "black", "label": "Black", "swatch": "#1c1c1c" }
+            { "id": "white", "label": "White", "swatch": "#f2f2f2", "image": "/products/wyze-cam-v4.svg" },
+            { "id": "grey", "label": "Grey", "swatch": "#9a9a9a", "image": "/products/wyze-cam-v4.svg" },
+            { "id": "black", "label": "Black", "swatch": "#1c1c1c", "image": "/products/wyze-cam-v4.svg" }
           ],
           "defaultVariantId": "white",
           "initialQuantities": { "white": 1 }
@@ -34,8 +34,8 @@
           "compareAtPrice": 39.98,
           "price": 34.98,
           "variants": [
-            { "id": "white", "label": "White", "swatch": "#f2f2f2" },
-            { "id": "black", "label": "Black", "swatch": "#1c1c1c" }
+            { "id": "white", "label": "White", "swatch": "#f2f2f2", "image": "/products/wyze-cam-pan-v3.svg" },
+            { "id": "black", "label": "Black", "swatch": "#1c1c1c", "image": "/products/wyze-cam-pan-v3.svg" }
           ],
           "defaultVariantId": "white",
           "initialQuantities": { "white": 2 }
@@ -50,8 +50,8 @@
           "compareAtPrice": null,
           "price": 89.98,
           "variants": [
-            { "id": "white", "label": "White", "swatch": "#f2f2f2" },
-            { "id": "black", "label": "Black", "swatch": "#1c1c1c" }
+            { "id": "white", "label": "White", "swatch": "#f2f2f2", "image": "/products/wyze-cam-floodlight-v2.svg" },
+            { "id": "black", "label": "Black", "swatch": "#1c1c1c", "image": "/products/wyze-cam-floodlight-v2.svg" }
           ],
           "defaultVariantId": "white",
           "initialQuantities": {}

@@ -1,7 +1,7 @@
-import { staticDataService } from "../services/static-data.services";
+const { staticDataService } = require("../services/static-data.services");
 
-export const staticDataController = (_req, res) => {
-  const { steps, review } = staticDataService()
+const staticDataController = (_req, res) => {
+  const { steps, review } = staticDataService();
   try {
     res.status(200).json({ steps, review });
   } catch (error) {
@@ -9,4 +9,4 @@ export const staticDataController = (_req, res) => {
   }
 };
 
-  
+module.exports = { staticDataController };

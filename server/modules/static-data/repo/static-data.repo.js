@@ -1,7 +1,10 @@
-import { steps, review } from "../../../data/products.json";
-export const staticDataRepo = () => {
+const { steps, review } = require("../../../data/products.json");
+
+const staticDataRepo = () => {
   return {
     steps,
     review,
   };
 };
+
+module.exports = { staticDataRepo };

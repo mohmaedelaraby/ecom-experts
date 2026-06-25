@@ -1,11 +1,12 @@
-import { staticDataRepo } from "../repo/static-data.repo";
+const { staticDataRepo } = require("../repo/static-data.repo");
 
-export const staticDataService = () => {
+const staticDataService = () => {
   const { steps, review } = staticDataRepo();
   if (!steps || !review) {
     throw new Error("Static data not found");
   }
 
   return { steps, review };
- 
-}
+};
+
+module.exports = { staticDataService };
