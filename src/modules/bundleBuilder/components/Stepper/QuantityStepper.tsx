@@ -40,7 +40,7 @@ function QuantityStepper({
     >
       <button
         type="button"
-        className="bundleBuilder-stepperButton"
+        className="bundleBuilder-stepperButton bundleBuilder-stepperButton--decrement"
         onClick={handleDecrement}
         disabled={disabled || quantity <= min}
         aria-label={`Decrease ${label}`}
@@ -52,7 +52,7 @@ function QuantityStepper({
       </span>
       <button
         type="button"
-        className="bundleBuilder-stepperButton"
+        className="bundleBuilder-stepperButton bundleBuilder-stepperButton--increment"
         onClick={handleIncrement}
         disabled={disabled || quantity >= max}
         aria-label={`Increase ${label}`}

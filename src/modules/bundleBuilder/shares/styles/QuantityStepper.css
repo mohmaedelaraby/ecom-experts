@@ -1,9 +1,7 @@
 .bundleBuilder-quantityStepper {
   display: inline-flex;
   align-items: center;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  overflow: hidden;
+  gap: 4px;
 }
 
 .bundleBuilder-quantityStepper--disabled {
@@ -11,15 +9,25 @@
 }
 
 .bundleBuilder-stepperButton {
-  background: #f7f7f7;
+  background: transparent;
   border: none;
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #1f1f1f;
+  color: #6b7280;
+}
+
+.bundleBuilder-stepperButton--decrement {
+  border: 1.5px solid #e3e6ea;
+  background: #ffffff;
+}
+
+.bundleBuilder-stepperButton--increment {
+  background: #eef1f4;
 }
 
 .bundleBuilder-stepperButton:disabled {
@@ -27,35 +35,45 @@
   color: #c0c0c0;
 }
 
+.bundleBuilder-stepperButton--decrement:disabled {
+  border-color: #ededed;
+}
+
 .bundleBuilder-stepperButton:hover:not(:disabled) {
   background: #ececec;
 }
 
 .bundleBuilder-stepperValue {
-  min-width: 28px;
+  min-width: 18px;
   text-align: center;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 400;
+  color: #1f2330;
+}
+
+.bundleBuilder-quantityStepper--small {
+  gap: 10px;
 }
 
 .bundleBuilder-quantityStepper--small .bundleBuilder-stepperButton {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
 }
 
 .bundleBuilder-quantityStepper--small .bundleBuilder-stepperValue {
-  min-width: 22px;
-  font-size: 12px;
+  min-width: 16px;
+  font-size: 15px;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .bundleBuilder-stepperButton {
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
   }
 
   .bundleBuilder-stepperValue {
-    min-width: 20px;
-    font-size: 11px;
+    min-width: 16px;
+    font-size: 16px;
   }
 }
