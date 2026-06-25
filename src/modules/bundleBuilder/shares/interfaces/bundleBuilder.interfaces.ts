@@ -60,7 +60,6 @@ export interface Review {
 
 export interface CatalogResponse {
   steps: Step[];
-  review: Review;
 }
 
 export const NO_VARIANT_KEY = 'default';

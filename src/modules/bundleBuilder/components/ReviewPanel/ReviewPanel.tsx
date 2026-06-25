@@ -7,7 +7,7 @@ import {
   computeReviewLineItems,
   computeTotals,
 } from '../../shares/store/bundleBuilder.store';
-import { formatCurrency } from '../../shares/utils/bundleBuilder.utils';
+import { formatCurrency, REVIEW_CONTENT } from '../../shares/utils/bundleBuilder.utils';
 import type { ReviewLineItem } from '../../shares/interfaces/bundleBuilder.interfaces';
 import '../../shares/styles/ReviewPanel.css';
 
@@ -47,8 +47,6 @@ function ReviewPanel() {
     return null;
   }
 
-  const { review } = catalog;
-
   const handleCheckout = () => {
     window.alert('This is a placeholder checkout. No order was actually placed.');
   };
@@ -61,8 +59,9 @@ function ReviewPanel() {
 
   return (
     <aside className="bundleBuilder-reviewPanel" aria-label="Your security system">
-      <h2 className="bundleBuilder-reviewTitle">Your security system</h2>
-      <p className="bundleBuilder-reviewDescription">Review your personalized protection system designed to keep what matters most safe.</p>
+      <p className="bundleBuilder-reviewHeader">Review </p>
+      <p className="bundleBuilder-reviewTitle">{REVIEW_CONTENT.title}</p>
+      <p className="bundleBuilder-reviewDescription">{REVIEW_CONTENT.description}</p>
 
       <div className="bundleBuilder-reviewLineItems">
         {CATEGORY_ORDER.filter((category) => (grouped.get(category) ?? []).length > 0).map(
@@ -109,10 +108,11 @@ function ReviewPanel() {
       <div className="bundleBuilder-reviewExtras">
         <div className="bundleBuilder-reviewRow">
           <span className="bundleBuilder-reviewRowLabel">
-            <Truck size={16} aria-hidden="true" /> Fast Shipping
+            <Truck size={16} aria-hidden="true" /> {REVIEW_CONTENT.shipping.label}
           </span>
           <span className="bundleBuilder-reviewRowValue">
-            {formatCurrency(5.99)}
+            {REVIEW_CONTENT.shipping.priceLabel ??
+              formatCurrency(REVIEW_CONTENT.shipping.price)}
           </span>
         </div>
 
@@ -124,13 +124,13 @@ function ReviewPanel() {
             className="bundleBuilder-guaranteeIcon"
           />
           <div>
-            <p className="bundleBuilder-guaranteeLabel">100% Satisfaction Guaranteed</p>
-            <p className="bundleBuilder-guaranteeSublabel">30-day hassle-free returns. If you're not totally in love with the product, we will refund you 100%.</p>
+            <p className="bundleBuilder-guaranteeLabel">{REVIEW_CONTENT.guarantee.label}</p>
+            <p className="bundleBuilder-guaranteeSublabel">{REVIEW_CONTENT.guarantee.sublabel}</p>
           </div>
         </div>
 
         <div className="bundleBuilder-reviewRow bundleBuilder-reviewRow--financing">
-          <span>Call as low as $19.99/mo</span>
+          <span>{REVIEW_CONTENT.financing.label}</span>
         </div>
 
         <div className="bundleBuilder-totalRow">
@@ -159,7 +159,7 @@ function ReviewPanel() {
           className="bundleBuilder-checkoutButton"
           onClick={handleCheckout}
         >
-          Checkout
+          {REVIEW_CONTENT.checkoutLabel}
         </button>
 
         <button
@@ -167,7 +167,7 @@ function ReviewPanel() {
           className="bundleBuilder-saveForLaterButton"
           onClick={handleSaveForLater}
         >
-          Save my system for later
+          {REVIEW_CONTENT.saveForLaterLabel}
         </button>
 
         {savedMessage && (

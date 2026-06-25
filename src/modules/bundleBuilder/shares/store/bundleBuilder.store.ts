@@ -5,6 +5,7 @@ import {
   BundleBuilderServiceError,
 } from '../services/bundleBuilder.service';
 import { NO_VARIANT_KEY } from '../interfaces/bundleBuilder.interfaces';
+import { REVIEW_CONTENT } from '../utils/bundleBuilder.utils';
 import type {
   BundleBuilderStore,
   BundleTotals,
@@ -115,9 +116,9 @@ function computeTotals(
     preDiscountTotal += perUnitCompare * item.quantity;
   }
 
-  if (catalog?.review.shipping) {
-    finalTotal += catalog.review.shipping.price;
-    preDiscountTotal += catalog.review.shipping.price;
+  if (catalog) {
+    finalTotal += REVIEW_CONTENT.shipping.price;
+    preDiscountTotal += REVIEW_CONTENT.shipping.price;
   }
 
   const savings = Math.max(0, preDiscountTotal - finalTotal);
