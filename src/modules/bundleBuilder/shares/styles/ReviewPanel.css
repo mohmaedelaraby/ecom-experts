@@ -30,21 +30,25 @@
 .bundleBuilder-reviewLineItems {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .bundleBuilder-reviewGroup {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+}
+
+.bundleBuilder-reviewGroup:not(:last-child) {
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #CED6DE;
 }
 
 .bundleBuilder-reviewGroupTitle {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: #8a8a8a;
   margin: 0;
 }
@@ -56,11 +60,11 @@
 }
 
 .bundleBuilder-reviewThumb {
-  width: 40px;
-  height: 40px;
+  width: 41px;
+  height: 41px;
   object-fit: contain;
-  border: 1px solid #4E2FD2B2;
-  border-radius: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
   background: #fafafa;
   flex-shrink: 0;
 }
@@ -71,8 +75,8 @@
 }
 
 .bundleBuilder-reviewLineName {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 400;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -87,7 +91,7 @@
 }
 
 .bundleBuilder-reviewExtras {
-  border-top: 1px solid #1F1F1F;
+  border-top: 1px dashed   #CED6DE;
   padding-top: 16px;
   display: flex;
   flex-direction: column;
