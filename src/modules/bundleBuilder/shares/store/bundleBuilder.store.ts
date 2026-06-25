@@ -90,6 +90,8 @@ function computeReviewLineItems(
           quantity,
           unitPrice: product.price,
           lineTotal: product.price * quantity,
+          compareAtLineTotal:
+            product.compareAtPrice != null ? product.compareAtPrice * quantity : null,
           priceLabel: product.priceLabel ?? null,
           lockedQuantity: product.lockedQuantity === true,
         });
@@ -118,7 +120,7 @@ function computeTotals(
 
   if (catalog) {
     finalTotal += REVIEW_CONTENT.shipping.price;
-    preDiscountTotal += REVIEW_CONTENT.shipping.price;
+    preDiscountTotal += REVIEW_CONTENT.shipping.compareAtPrice ?? REVIEW_CONTENT.shipping.price;
   }
 
   const savings = Math.max(0, preDiscountTotal - finalTotal);

@@ -95,8 +95,15 @@ function ReviewPanel() {
                     label={`${item.name} quantity`}
                     size="small"
                   />
-                  <span className="bundleBuilder-reviewLinePrice">
-                    {item.priceLabel ?? formatCurrency(item.lineTotal)}
+                  <span className="bundleBuilder-reviewLinePricing">
+                    {item.compareAtLineTotal != null && (
+                      <span className="bundleBuilder-reviewLineComparePrice">
+                        {formatCurrency(item.compareAtLineTotal)}
+                      </span>
+                    )}
+                    <span className="bundleBuilder-reviewLinePrice">
+                      {item.priceLabel ?? formatCurrency(item.lineTotal)}
+                    </span>
                   </span>
                 </div>
               ))}
@@ -112,45 +119,50 @@ function ReviewPanel() {
             {REVIEW_CONTENT.shipping.label}
           </span>
           <span className="bundleBuilder-reviewRowValue">
-            {REVIEW_CONTENT.shipping.priceLabel ??
-              formatCurrency(REVIEW_CONTENT.shipping.price)}
+            {REVIEW_CONTENT.shipping.compareAtPrice != null && (
+              <span className="bundleBuilder-reviewLineComparePrice">
+                {formatCurrency(REVIEW_CONTENT.shipping.compareAtPrice)}
+              </span>
+            )}
+           
+            <span className="bundleBuilder-reviewLinePrice">
+              FREE
+              </span>
           </span>
         </div>
 
         <div className="bundleBuilder-guaranteeBlock">
           <img
             src={satisfactionBadgeIcon}
-            alt=""
-            aria-hidden="true"
+            alt={`${REVIEW_CONTENT.guarantee.label} — ${REVIEW_CONTENT.guarantee.sublabel}`}
             className="bundleBuilder-guaranteeIcon"
           />
-          <div>
-            <p className="bundleBuilder-guaranteeLabel">{REVIEW_CONTENT.guarantee.label}</p>
-            <p className="bundleBuilder-guaranteeSublabel">{REVIEW_CONTENT.guarantee.sublabel}</p>
+          <div className="bundleBuilder-guaranteeSide">
+            <div className="bundleBuilder-financingBadgeWrap">
+              <span className="bundleBuilder-financingBadge">
+                {REVIEW_CONTENT.financing.label}
+              </span>
+            </div>
+
+            <div className="bundleBuilder-totalRow">
+              <span className="bundleBuilder-totalValues">
+                {totals.preDiscountTotal > totals.finalTotal && (
+                  <span className="bundleBuilder-totalCompare">
+                    {formatCurrency(totals.preDiscountTotal)}
+                  </span>
+                )}
+                <span className="bundleBuilder-totalFinal">
+                  {formatCurrency(totals.finalTotal)}
+                </span>
+              </span>
+            </div>
           </div>
         </div>
 
-        <div className="bundleBuilder-reviewRow bundleBuilder-reviewRow--financing">
-          <span>{REVIEW_CONTENT.financing.label}</span>
-        </div>
-
-        <div className="bundleBuilder-totalRow">
-          <span className="bundleBuilder-totalLabel">Total</span>
-          <span className="bundleBuilder-totalValues">
-            {totals.preDiscountTotal > totals.finalTotal && (
-              <span className="bundleBuilder-totalCompare">
-                {formatCurrency(totals.preDiscountTotal)}
-              </span>
-            )}
-            <span className="bundleBuilder-totalFinal">
-              {formatCurrency(totals.finalTotal)}
-            </span>
-          </span>
-        </div>
 
         {totals.savings > 0 && (
           <p className="bundleBuilder-savingsCallout">
-            Congrats! You're saving {formatCurrency(totals.savings)} on your security
+            Congrats! You're saving {formatCurrency(totals.preDiscountTotal - totals.finalTotal)} on your security
             bundle!
           </p>
         )}

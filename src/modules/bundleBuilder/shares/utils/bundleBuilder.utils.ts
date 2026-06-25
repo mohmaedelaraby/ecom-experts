@@ -14,7 +14,7 @@ const REVIEW_CONTENT: Review = {
   title: 'Your security system',
   description:
     'Review your personalized protection system designed to keep what matters most safe.',
-  shipping: { label: 'Fast Shipping', price: 5.99, priceLabel: null },
+  shipping: { label: 'Fast Shipping', price: 0, priceLabel: 'FREE', compareAtPrice: 5.99 },
   guarantee: {
     label: '100% Satisfaction Guaranteed',
     sublabel:

@@ -37,6 +37,7 @@ export interface ReviewShipping {
   label: string;
   price: number;
   priceLabel: string | null;
+  compareAtPrice?: number;
 }
 
 export interface ReviewGuarantee {
@@ -78,6 +79,7 @@ export interface ReviewLineItem {
   quantity: number;
   unitPrice: number;
   lineTotal: number;
+  compareAtLineTotal: number | null;
   priceLabel: string | null;
   lockedQuantity: boolean;
 }

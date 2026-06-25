@@ -83,11 +83,25 @@
   white-space: nowrap;
 }
 
-.bundleBuilder-reviewLinePrice {
-  font-size: 13px;
-  font-weight: 700;
+.bundleBuilder-reviewLinePricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
   min-width: 60px;
+}
+
+.bundleBuilder-reviewLinePrice {
+  font-size: 14px;
+  font-weight: 400;
   text-align: right;
+  color:#4E2FD2;
+}
+
+.bundleBuilder-reviewLineComparePrice {
+  font-size: 12px;
+  color: #9a9a9a;
+  text-decoration: line-through;
 }
 
 .bundleBuilder-reviewExtras {
@@ -106,6 +120,13 @@
   color: #4a4a4a;
 }
 
+.bundleBuilder-reviewRowValue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
 .bundleBuilder-reviewRowLabel {
   display: flex;
   align-items: center;
@@ -122,43 +143,45 @@
   height: 41px;
 }
 
-.bundleBuilder-reviewRow--financing {
-  color: #6b6b6b;
-  font-size: 12px;
-}
-
 .bundleBuilder-guaranteeBlock {
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 10px;
-  border-radius: 8px;
-  padding: 12px;
 }
 
 .bundleBuilder-guaranteeIcon {
+  width: 90px;
+  height: 90px;
   flex-shrink: 0;
 }
 
-.bundleBuilder-guaranteeLabel {
-  font-size: 13px;
-  font-weight: 700;
-  margin: 0 0 2px;
+.bundleBuilder-guaranteeSide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
 }
 
-.bundleBuilder-guaranteeSublabel {
+.bundleBuilder-financingBadgeWrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bundleBuilder-financingBadge {
+  background: #4E2FD2;
+  color: #ffffff;
   font-size: 12px;
-  color: #6b6b6b;
-  margin: 0;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
 }
 
 .bundleBuilder-totalRow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.bundleBuilder-totalLabel {
-  font-size: 16px;
-  font-weight: 700;
+  justify-content: flex-end;
 }
 
 .bundleBuilder-totalValues {
@@ -180,10 +203,11 @@
 }
 
 .bundleBuilder-savingsCallout {
-  font-size: 13px;
+  font-size: 12px;
   color: #2fa364;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
+  text-align: center;
 }
 
 .bundleBuilder-checkoutButton {
