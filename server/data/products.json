@@ -170,14 +170,5 @@
         }
       ]
     }
-  ],
-  "review": {
-    "title": "Your security system",
-    "description": "Review your personalized protection system designed to keep what matters most safe.",
-    "shipping": { "label": "Fast Shipping", "price": 5.99, "priceLabel": null },
-    "guarantee": { "label": "100% Satisfaction Guaranteed", "sublabel": "30-day hassle-free returns. If you're not totally in love with the product, we will refund you 100%." },
-    "financing": { "label": "Call as low as $19.99/mo" },
-    "checkoutLabel": "Checkout",
-    "saveForLaterLabel": "Save my system for later"
-  }
+  ]
 }

@@ -1,9 +1,8 @@
-const { steps, review } = require("../../../data/products.json");
+const { steps } = require("../../../data/products.json");
 
 const staticDataRepo = () => {
   return {
     steps,
-    review,
   };
 };
 

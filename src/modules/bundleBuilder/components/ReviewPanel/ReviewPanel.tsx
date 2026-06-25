@@ -61,8 +61,8 @@ function ReviewPanel() {
 
   return (
     <aside className="bundleBuilder-reviewPanel" aria-label="Your security system">
-      <h2 className="bundleBuilder-reviewTitle">{review.title}</h2>
-      <p className="bundleBuilder-reviewDescription">{review.description}</p>
+      <h2 className="bundleBuilder-reviewTitle">Your security system</h2>
+      <p className="bundleBuilder-reviewDescription">Review your personalized protection system designed to keep what matters most safe.</p>
 
       <div className="bundleBuilder-reviewLineItems">
         {CATEGORY_ORDER.filter((category) => (grouped.get(category) ?? []).length > 0).map(
@@ -109,10 +109,10 @@ function ReviewPanel() {
       <div className="bundleBuilder-reviewExtras">
         <div className="bundleBuilder-reviewRow">
           <span className="bundleBuilder-reviewRowLabel">
-            <Truck size={16} aria-hidden="true" /> {review.shipping.label}
+            <Truck size={16} aria-hidden="true" /> Fast Shipping
           </span>
           <span className="bundleBuilder-reviewRowValue">
-            {review.shipping.priceLabel ?? formatCurrency(review.shipping.price)}
+            {formatCurrency(5.99)}
           </span>
         </div>
 
@@ -124,13 +124,13 @@ function ReviewPanel() {
             className="bundleBuilder-guaranteeIcon"
           />
           <div>
-            <p className="bundleBuilder-guaranteeLabel">{review.guarantee.label}</p>
-            <p className="bundleBuilder-guaranteeSublabel">{review.guarantee.sublabel}</p>
+            <p className="bundleBuilder-guaranteeLabel">100% Satisfaction Guaranteed</p>
+            <p className="bundleBuilder-guaranteeSublabel">30-day hassle-free returns. If you're not totally in love with the product, we will refund you 100%.</p>
           </div>
         </div>
 
         <div className="bundleBuilder-reviewRow bundleBuilder-reviewRow--financing">
-          <span>{review.financing.label}</span>
+          <span>Call as low as $19.99/mo</span>
         </div>
 
         <div className="bundleBuilder-totalRow">
@@ -159,7 +159,7 @@ function ReviewPanel() {
           className="bundleBuilder-checkoutButton"
           onClick={handleCheckout}
         >
-          {review.checkoutLabel}
+          Checkout
         </button>
 
         <button
@@ -167,7 +167,7 @@ function ReviewPanel() {
           className="bundleBuilder-saveForLaterButton"
           onClick={handleSaveForLater}
         >
-          {review.saveForLaterLabel}
+          Save my system for later
         </button>
 
         {savedMessage && (

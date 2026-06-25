@@ -15,6 +15,10 @@
   box-shadow: 0 0 0 1px #4E2FD2B2;
 }
 
+.bundleBuilder-accordionStep--open .bundleBuilder-productCard {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 
 
 .bundleBuilder-productBadge {

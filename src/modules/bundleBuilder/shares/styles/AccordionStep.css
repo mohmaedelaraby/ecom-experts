@@ -10,8 +10,8 @@
 
 .bundleBuilder-accordionStep.bundleBuilder-accordionStep--open {
   background: #EDF4FF;
-  border: 1px solid #4E2FD2;
   border-radius: 12px;
+  border-bottom: none;
   margin: 8px;
   overflow: hidden;
 }
