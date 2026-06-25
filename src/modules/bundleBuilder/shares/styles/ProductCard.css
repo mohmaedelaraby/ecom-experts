@@ -2,8 +2,8 @@
   position: relative;
   background: #ffffff;
   border: 2px solid #e5e5e5;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 10px;
+  padding: 11px;
   display: flex;
   flex-direction: column;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
@@ -20,23 +20,42 @@
 
 .bundleBuilder-productBadge {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  background: #5b4fe5;
+  top: 11px;
+  left: 11px;
+  background: #4E2FD2;
   color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  padding:2px 6px;
+  border-radius: 10px;
   z-index: 1;
+}
+
+.bundleBuilder-productMain {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.bundleBuilder-productLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100px;
+}
+
+.bundleBuilder-productRight {
+  flex: 1;
+  min-width: 0;
 }
 
 .bundleBuilder-productImageWrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 140px;
-  margin-bottom: 12px;
+  height: 100px;
+  width: 100%;
 }
 
 .bundleBuilder-productImage {
@@ -46,49 +65,84 @@
 }
 
 .bundleBuilder-productTitle {
-  font-size: 15px;
-  font-weight: 700;
-  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .bundleBuilder-productDescription {
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 400;
   color: #6b6b6b;
-  margin: 0 0 6px;
-  flex-grow: 1;
+  margin: 8px 0 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
 
 .bundleBuilder-learnMoreLink {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #5b4fe5;
-  text-decoration: none;
-  margin-bottom: 12px;
-  display: inline-block;
+  text-decoration: underline;
+  white-space: nowrap;
 }
 
 .bundleBuilder-learnMoreLink:hover {
   text-decoration: underline;
 }
 
-.bundleBuilder-variantChipRow {
+.bundleBuilder-variantCardRow {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-top: 8px;
 }
 
-.bundleBuilder-variantChip {
-  width: 24px;
-  height: 24px;
+.bundleBuilder-variantCard {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
   border-radius: 8px;
-  border: 2px solid #e5e5e5;
+  padding: 4px 8px;
   cursor: pointer;
-  padding: 0;
 }
 
-.bundleBuilder-variantChip--active {
+.bundleBuilder-variantCard--active {
   border-color: #1F1F1F;
-  box-shadow: 0 0 0 2px rgba(31, 31, 31, 0.25);
+  box-shadow: 0 0 0 2px rgba(31, 31, 31, 0.15);
+}
+
+.bundleBuilder-variantCardImageWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.bundleBuilder-variantCardImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.bundleBuilder-variantCardSwatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+  flex-shrink: 0;
+}
+
+.bundleBuilder-variantCardLabel {
+  font-size: 12px;
+  font-weight: 400;
+  color: #1F1F1F;
 }
 
 .bundleBuilder-productFooter {
@@ -96,7 +150,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  margin-top: auto;
+  margin-top: 8px;
 }
 
 .bundleBuilder-productPricing {
@@ -108,14 +162,14 @@
 
 .bundleBuilder-comparePrice {
   font-size: 12px;
-  color: #9a9a9a;
+  color: #D8392B;
   text-decoration: line-through;
 }
 
 .bundleBuilder-activePrice {
   font-size: 15px;
   font-weight: 700;
-  color: #5b4fe5;
+  color: #575757;
 }
 
 .bundleBuilder-activePrice--free {
@@ -134,34 +188,48 @@
     padding: 3px 6px;
   }
 
+  .bundleBuilder-productLeft {
+    width: 72px;
+  }
+
   .bundleBuilder-productImageWrap {
-    height: 80px;
-    margin-bottom: 8px;
+    height: 72px;
   }
 
   .bundleBuilder-productTitle {
     font-size: 12px;
-    margin: 0 0 2px;
   }
 
   .bundleBuilder-productDescription {
-    font-size: 11px;
-    margin: 0 0 4px;
+    font-size: 10px;
+    margin-top: 6px;
   }
 
   .bundleBuilder-learnMoreLink {
-    font-size: 11px;
-    margin-bottom: 8px;
+    font-size: 10px;
   }
 
-  .bundleBuilder-variantChipRow {
+  .bundleBuilder-variantCardRow {
     gap: 4px;
-    margin-bottom: 8px;
+    margin-top: 6px;
   }
 
-  .bundleBuilder-variantChip {
-    width: 18px;
-    height: 18px;
+  .bundleBuilder-variantCard {
+    padding: 3px 6px;
+  }
+
+  .bundleBuilder-variantCardImageWrap {
+    width: 16px;
+    height: 16px;
+  }
+
+  .bundleBuilder-variantCardSwatch {
+    width: 12px;
+    height: 12px;
+  }
+
+  .bundleBuilder-variantCardLabel {
+    font-size: 10px;
   }
 
   .bundleBuilder-productFooter {

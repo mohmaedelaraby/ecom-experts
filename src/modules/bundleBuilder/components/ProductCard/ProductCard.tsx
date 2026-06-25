@@ -61,68 +61,91 @@ function ProductCard({ product, stepId }: ProductCardProps) {
         <span className="bundleBuilder-productBadge">{product.badge}</span>
       )}
 
-      <div className="bundleBuilder-productImageWrap">
-        <img
-          className="bundleBuilder-productImage"
-          src={product.image}
-          alt={product.name}
-          loading="lazy"
-        />
-      </div>
-
-      <h3 className="bundleBuilder-productTitle">{product.name}</h3>
-      <p className="bundleBuilder-productDescription">{product.description}</p>
-
-      <a
-        className="bundleBuilder-learnMoreLink"
-        href={product.learnMoreUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        Learn More
-      </a>
-
-      {hasVariants && (
-        <div className="bundleBuilder-variantChipRow" role="group" aria-label="Color">
-          {product.variants.map((variant) => (
-            <button
-              key={variant.id}
-              type="button"
-              className={`bundleBuilder-variantChip ${
-                variant.id === activeVariantId
-                  ? 'bundleBuilder-variantChip--active'
-                  : ''
-              }`}
-              style={{ backgroundColor: variant.swatch }}
-              aria-label={variant.label}
-              aria-pressed={variant.id === activeVariantId}
-              onClick={() => handleSelectVariant(variant.id)}
+      <div className="bundleBuilder-productMain">
+        <div className="bundleBuilder-productLeft">
+          <div className="bundleBuilder-productImageWrap">
+            <img
+              className="bundleBuilder-productImage"
+              src={product.image}
+              alt={product.name}
+              loading="lazy"
             />
-          ))}
+          </div>
         </div>
-      )}
 
-      <div className="bundleBuilder-productFooter">
-        <QuantityStepper
-          quantity={quantity}
-          onChange={handleQuantityChange}
-          disabled={isLocked}
-          label={`${product.name} quantity`}
-        />
+        <div className="bundleBuilder-productRight">
+          <h3 className="bundleBuilder-productTitle">{product.name}</h3>
+          <p className="bundleBuilder-productDescription">
+            {product.description}{' '}
+            <a
+              className="bundleBuilder-learnMoreLink"
+              href={product.learnMoreUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Learn More
+            </a>
+          </p>
 
-        <div className="bundleBuilder-productPricing">
-          {product.compareAtPrice != null && (
-            <span className="bundleBuilder-comparePrice">
-              {formatCurrency(product.compareAtPrice)}
-            </span>
+          {hasVariants && (
+            <div
+              className="bundleBuilder-variantCardRow"
+              role="group"
+              aria-label="Color"
+            >
+              {product.variants.map((variant) => (
+                <button
+                  key={variant.id}
+                  type="button"
+                  className={`bundleBuilder-variantCard ${
+                    variant.id === activeVariantId
+                      ? 'bundleBuilder-variantCard--active'
+                      : ''
+                  }`}
+                  aria-pressed={variant.id === activeVariantId}
+                  onClick={() => handleSelectVariant(variant.id)}
+                >
+                  {variant.image && (
+                    <span className="bundleBuilder-variantCardImageWrap">
+                      <img
+                        className="bundleBuilder-variantCardImage"
+                        src={variant.image}
+                        alt={variant.label}
+                        loading="lazy"
+                      />
+                    </span>
+                  )}
+                  <span className="bundleBuilder-variantCardLabel">
+                    {variant.label}
+                  </span>
+                </button>
+              ))}
+            </div>
           )}
-          <span
-            className={`bundleBuilder-activePrice ${
-              product.priceLabel ? 'bundleBuilder-activePrice--free' : ''
-            }`}
-          >
-            {priceLabel}
-          </span>
+
+          <div className="bundleBuilder-productFooter">
+            <QuantityStepper
+              quantity={quantity}
+              onChange={handleQuantityChange}
+              disabled={isLocked}
+              label={`${product.name} quantity`}
+            />
+
+            <div className="bundleBuilder-productPricing">
+              {product.compareAtPrice != null && (
+                <span className="bundleBuilder-comparePrice">
+                  {formatCurrency(product.compareAtPrice)}
+                </span>
+              )}
+              <span
+                className={`bundleBuilder-activePrice ${
+                  product.priceLabel ? 'bundleBuilder-activePrice--free' : ''
+                }`}
+              >
+                {priceLabel}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

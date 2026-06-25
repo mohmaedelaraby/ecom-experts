@@ -2,6 +2,7 @@ export interface Variant {
   id: string;
   label: string;
   swatch: string;
+  image?: string;
 }
 
 export type InitialQuantities = Record<string, number>;
