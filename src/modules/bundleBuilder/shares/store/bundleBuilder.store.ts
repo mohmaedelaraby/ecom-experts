@@ -85,7 +85,7 @@ function computeReviewLineItems(
           variantId,
           variantLabel: variant?.label ?? null,
           name: product.name,
-          image: product.image,
+          image: variant?.image ?? product.image,
           category: step.category,
           quantity,
           unitPrice: product.price,
