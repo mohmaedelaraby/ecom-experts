@@ -16,7 +16,7 @@ import type {
   ReviewLineItem,
 } from '../models/bundleBuilder.models';
 
-const STORAGE_KEY = 'ecom-experts:bundle-system';
+const STORAGE_KEY = import.meta.env.VITE_BUNDLE_BUILDER_STORAGE_KEY;
 
 function loadPersistedState(): PersistedBundleState | null {
   try {
@@ -32,7 +32,7 @@ function persistState(state: PersistedBundleState): void {
   try {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch {
-    // Storage may be unavailable (e.g. private mode quota) — non-critical convenience feature.
+    console.warn('Failed to persist bundle builder state to localStorage');
   }
 }
 
@@ -50,13 +50,7 @@ function findProduct(
   return null;
 }
 
-/**
- * Pure derivation, kept outside the store so components can compute it
- * via useMemo keyed on the raw primitives (catalog, quantities) instead
- * of calling it as a Zustand selector — a selector returning a fresh
- * array/object on every call breaks useSyncExternalStore's snapshot
- * caching and causes an infinite render loop.
- */
+
 function computeReviewLineItems(
   catalog: CatalogResponse | null,
   quantities: QuantityMap,
@@ -139,7 +133,7 @@ const useBundleBuilderStore = create<BundleBuilderStore>((set, get) => ({
   hasHydratedFromStorage: false,
 
   fetchCatalog: async () => {
-    if (get().catalog) return;
+    if (get().catalog || get().isLoading) return;
 
     set({ isLoading: true, error: null });
 

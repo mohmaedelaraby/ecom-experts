@@ -10,7 +10,13 @@ A multi-step bundle builder for a home security system, built as a React take-ho
 
 ## Run instructions
 
-Two processes, run in separate terminals from a clean clone:
+Copy `.env.example` to `.env` in the project root (it sets the API base URL and the `localStorage` key the frontend reads from — both already point at the local setup below, no changes needed):
+
+```bash
+cp .env.example .env
+```
+
+Then, two processes, run in separate terminals from a clean clone:
 
 ```bash
 # Terminal 1 — backend (serves /api/products on :4000)
@@ -23,7 +29,7 @@ npm install
 npm run dev
 ```
 
-Then open [http://localhost:5173](http://localhost:5173). The frontend expects the API at `http://localhost:4000` (hardcoded in `src/modules/bundleBuilder/shares/api/bundleBuilder.api.ts` — fine for this take-home, would move to an env var for anything beyond a local demo).
+Then open [http://localhost:5173](http://localhost:5173). The frontend reads the API URL from `VITE_BUNDLE_BUILDER_API_BASE_URL` (see `src/modules/bundleBuilder/shares/api/bundleBuilder.api.ts`), sourced from `.env` via Vite's `import.meta.env`.
 
 `npm run build` (root) type-checks with `tsc -b` and produces a production build via Vite.
 
@@ -37,7 +43,7 @@ ecom-experts/
       api/                     # axios calls only
       services/                # business logic / data-transform, called by the store
       store/                   # Zustand store — all UI + derived state lives here
-      interfaces/              # all TypeScript types
+      models/                  # TypeScript types, split per-component (e.g. ProductCard.models.ts)
       utils/, hooks/
   server/
     index.js                   # Express app, one route: GET /api/products
@@ -57,6 +63,6 @@ ecom-experts/
 - **Figma fidelity is approximate, not pixel-exact.** I built this from a set of exported screenshots rather than live Figma inspect values (no Figma API access), so exact spacing/typography/hex values are eyeballed, not measured. Colors (purple/indigo accent, orange-red selected border), border radii, and layout proportions are close approximations.
 - **Product images are placeholder SVGs**, not real product photography — there was no asset export available, so I generated simple placeholder graphics per product.
 - **Some product data (prices, badges, which products have which variants) is inferred from a single mid-resolution Figma export** and may not match the source design exactly down to the cent — the behavior and structure are accurate, the specific numbers are best-effort.
-- **Checkout is a placeholder** (`window.alert`), as the spec allows — no real navigation or order flow.
+- **Checkout is a placeholder** (a success toast, no real navigation or order flow), as the spec allows.
 - **No automated test suite** — verification was done via a manual Playwright script exercising the accordion, variant/quantity sync, totals, and save/reload persistence, plus visual screenshot review at desktop and mobile widths. Given more time, I'd add component tests around the store's quantity/variant logic (highest-risk area) and a couple of Playwright e2e specs.
 - **No server-side persistence** — "Save my system for later" is `localStorage`-only, per the spec; the Express backend only serves the read-only catalog.

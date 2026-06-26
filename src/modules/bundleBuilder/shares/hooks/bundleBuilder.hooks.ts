@@ -9,7 +9,7 @@ function useBundleBuilder() {
 
   useEffect(() => {
     fetchCatalog();
-  }, [fetchCatalog]);
+  }, []);
 
   return { catalog, isLoading, error };
 }
