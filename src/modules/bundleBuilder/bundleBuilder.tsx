@@ -9,9 +9,7 @@ function BundleBuilder() {
   if (isLoading && !catalog) {
     return (
       <div className="bundleBuilder-root bundleBuilder-root--centered">
-        <p className="bundleBuilder-loadingText" role="status">
-          Loading your security system…
-        </p>
+        <span className="bundleBuilder-spinner" role="status" aria-label="Loading your system" />
       </div>
     );
   }
