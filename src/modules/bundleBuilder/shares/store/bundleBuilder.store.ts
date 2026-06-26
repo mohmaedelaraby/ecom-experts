@@ -180,8 +180,8 @@ const useBundleBuilderStore = create<BundleBuilderStore>((set, get) => ({
     })),
 
   getActiveVariantId: (productId) => {
-    const state = get();
-    return state.activeVariants[productId] ?? NO_VARIANT_KEY;
+    const { activeVariants } = get();
+    return activeVariants[productId] ?? NO_VARIANT_KEY;
   },
 
   setQuantity: (productId, variantId, quantity) =>
@@ -193,14 +193,14 @@ const useBundleBuilderStore = create<BundleBuilderStore>((set, get) => ({
     })),
 
   getQuantity: (productId, variantId) => {
-    const state = get();
-    return state.quantities[buildQuantityKey(productId, variantId)] ?? 0;
+    const { quantities } = get();
+    return quantities[buildQuantityKey(productId, variantId)] ?? 0;
   },
 
   getSelectedCountForStep: (stepId) => {
-    const state = get();
-    if (!state.catalog) return 0;
-    const step = state.catalog.steps.find((s) => s.id === stepId);
+    const { catalog , quantities } = get();
+    if (!catalog) return 0;
+    const step = catalog.steps.find((s) => s.id === stepId);
     if (!step) return 0;
 
     let count = 0;
@@ -212,7 +212,7 @@ const useBundleBuilderStore = create<BundleBuilderStore>((set, get) => ({
 
       const productHasAnyQty = variantIds.some(
         (variantId) =>
-          (state.quantities[buildQuantityKey(product.id, variantId)] ?? 0) > 0,
+          (quantities[buildQuantityKey(product.id, variantId)] ?? 0) > 0,
       );
 
       if (productHasAnyQty) count += 1;
@@ -221,22 +221,22 @@ const useBundleBuilderStore = create<BundleBuilderStore>((set, get) => ({
   },
 
   getReviewLineItems: () => {
-    const state = get();
-    return computeReviewLineItems(state.catalog, state.quantities);
+    const { catalog , quantities } = get();
+    return computeReviewLineItems(catalog, quantities);
   },
 
   getTotals: () => {
-    const state = get();
-    const lineItems = computeReviewLineItems(state.catalog, state.quantities);
-    return computeTotals(state.catalog, lineItems);
+    const { catalog , quantities } = get();
+    const lineItems = computeReviewLineItems(catalog, quantities);
+    return computeTotals(catalog, lineItems);
   },
 
   saveForLater: () => {
-    const state = get();
+    const { quantities, activeVariants, openStepId } = get();
     persistState({
-      quantities: state.quantities,
-      activeVariants: state.activeVariants,
-      openStepId: state.openStepId,
+      quantities,
+      activeVariants,
+      openStepId,
     });
   },
 }));

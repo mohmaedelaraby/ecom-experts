@@ -9,7 +9,6 @@ function formatCurrency(value: number): string {
   return CURRENCY_FORMATTER.format(value);
 }
 
-// The BE catalog endpoint never returns review/checkout copy — it's rendered entirely on the FE.
 const REVIEW_CONTENT: Review = {
   shipping: { label: 'Fast Shipping', price: 0, priceLabel: 'FREE', compareAtPrice: 5.99 },
 };
