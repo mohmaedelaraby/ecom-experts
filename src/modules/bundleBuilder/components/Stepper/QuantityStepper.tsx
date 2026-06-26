@@ -28,7 +28,6 @@ function QuantityStepper({
         size === 'small' ? 'bundleBuilder-quantityStepper--small' : ''
       } ${disabled ? 'bundleBuilder-quantityStepper--disabled' : ''}`}
       role="group"
-      aria-label={label}
     >
       <button
         type="button"
@@ -37,9 +36,9 @@ function QuantityStepper({
         disabled={disabled || quantity <= min}
         aria-label={`Decrease ${label}`}
       >
-        <Minus size={size === 'small' ? 12 : 14} aria-hidden="true" />
+        <Minus size={size === 'small' ? 12 : 14} />
       </button>
-      <span className="bundleBuilder-stepperValue" aria-live="polite">
+      <span className="bundleBuilder-stepperValue">
         {quantity}
       </span>
       <button
@@ -49,7 +48,7 @@ function QuantityStepper({
         disabled={disabled || quantity >= max}
         aria-label={`Increase ${label}`}
       >
-        <Plus size={size === 'small' ? 12 : 14} aria-hidden="true" />
+        <Plus size={size === 'small' ? 12 : 14} />
       </button>
     </div>
   );

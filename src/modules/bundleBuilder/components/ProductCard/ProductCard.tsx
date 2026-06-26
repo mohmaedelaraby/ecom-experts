@@ -48,9 +48,7 @@ function ProductCard({ product, stepId }: ProductCardProps) {
             {product.description}{' '}
             <a
               className="bundleBuilder-learnMoreLink"
-              href={product.learnMoreUrl}
-              target="_blank"
-              rel="noreferrer"
+             
             >
               Learn More
             </a>
