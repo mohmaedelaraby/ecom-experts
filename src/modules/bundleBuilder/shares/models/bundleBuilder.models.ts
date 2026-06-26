@@ -128,3 +128,7 @@ export interface AccordionStepProps {
 }
 
 
+export interface ProductCardProps {
+  product: Product;
+  stepId: string;
+}

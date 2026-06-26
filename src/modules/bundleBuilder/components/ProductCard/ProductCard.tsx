@@ -1,13 +1,9 @@
 import { QuantityStepper } from '../Stepper/QuantityStepper';
 import { useProductCard } from '../../shares/hooks/ProductCard.hooks';
 import { formatCurrency } from '../../shares/utils/bundleBuilder.utils';
-import type { Product } from '../../shares/models/bundleBuilder.models';
 import '../../shares/styles/ProductCard.css';
+import type { ProductCardProps } from '../../shares/models/bundleBuilder.models';
 
-interface ProductCardProps {
-  product: Product;
-  stepId: string;
-}
 
 function ProductCard({ product, stepId }: ProductCardProps) {
   const {
