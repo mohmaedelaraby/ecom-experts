@@ -1,4 +1,4 @@
-import type { UseQuantityStepperArgs } from "../models/bundleBuilder.models";
+import type { UseQuantityStepperArgs } from "../models/QuantityStepper.models";
 
 function useQuantityStepper({
   quantity,

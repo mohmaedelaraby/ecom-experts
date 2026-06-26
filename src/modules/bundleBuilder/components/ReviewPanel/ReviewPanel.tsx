@@ -4,7 +4,7 @@ import shippingIcon from '../../../../assets/icons/Wyze Sense Keypad.png';
 import { useReviewPanel } from '../../shares/hooks/ReviewPanel.hooks';
 import { formatCurrency, REVIEW_CONTENT } from '../../shares/utils/bundleBuilder.utils';
 import '../../shares/styles/ReviewPanel.css';
-import { CATEGORY_LABELS } from '../../shares/models/bundleBuilder.models';
+import { CATEGORY_LABELS } from '../../shares/models/ReviewPanel.models';
 
 
 

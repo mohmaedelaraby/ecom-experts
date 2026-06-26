@@ -1,7 +1,7 @@
 import { Minus, Plus } from 'lucide-react';
 import { useQuantityStepper } from '../../shares/hooks/QuantityStepper.hooks';
 import '../../shares/styles/QuantityStepper.css';
-import type { QuantityStepperProps } from '../../shares/models/bundleBuilder.models';
+import type { QuantityStepperProps } from '../../shares/models/QuantityStepper.models';
 
 
 

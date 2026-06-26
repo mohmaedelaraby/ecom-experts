@@ -2,7 +2,7 @@ import { QuantityStepper } from '../Stepper/QuantityStepper';
 import { useProductCard } from '../../shares/hooks/ProductCard.hooks';
 import { formatCurrency } from '../../shares/utils/bundleBuilder.utils';
 import '../../shares/styles/ProductCard.css';
-import type { ProductCardProps } from '../../shares/models/bundleBuilder.models';
+import type { ProductCardProps } from '../../shares/models/ProductCard.models';
 
 
 function ProductCard({ product, stepId }: ProductCardProps) {
