@@ -122,3 +122,9 @@ export interface BundleBuilderActions {
 }
 
 export type BundleBuilderStore = BundleBuilderState & BundleBuilderActions;
+
+export interface AccordionStepProps {
+  step: Step;
+}
+
+

@@ -1,16 +1,13 @@
 import { ProductCard } from '../ProductCard/ProductCard';
 import { useAccordionStep } from '../../shares/hooks/AccordionStep.hooks';
-import type { Step } from '../../shares/models/bundleBuilder.models';
 import cameraIcon from '../../../../assets/icons/livestream.svg';
 import shieldIcon from '../../../../assets/icons/logo_hms_new 1.svg';
 import radioIcon from '../../../../assets/icons/Group 1417.svg';
 import plusCircleIcon from '../../../../assets/icons/Frame 1419.svg';
 import chevronIcon from '../../../../assets/icons/carrot-up.svg';
 import '../../shares/styles/AccordionStep.css';
+import type { AccordionStepProps } from '../../shares/models/bundleBuilder.models';
 
-interface AccordionStepProps {
-  step: Step;
-}
 
 const ICONS_BY_KEY: Record<string, string> = {
   camera: cameraIcon,
@@ -35,7 +32,6 @@ function AccordionStep({ step }: AccordionStepProps) {
         type="button"
         className="bundleBuilder-accordionHeader"
         onClick={handleToggle}
-        aria-controls={`bundleBuilder-step-panel-${step.id}`}
       >
         <span className="bundleBuilder-stepEyebrowRow">
           <span className="bundleBuilder-stepEyebrow">
@@ -50,7 +46,6 @@ function AccordionStep({ step }: AccordionStepProps) {
               width={26}
               height={26}
               alt=""
-              aria-hidden="true"
             />
             <span className="bundleBuilder-stepTitle">{step.title}</span>
           </span>
@@ -66,7 +61,7 @@ function AccordionStep({ step }: AccordionStepProps) {
                   width={12}
                   height={12}
                   alt=""
-                  aria-hidden="true"
+  
                 />
               </>
             ) : (
@@ -76,7 +71,7 @@ function AccordionStep({ step }: AccordionStepProps) {
                 width={12}
                 height={12}
                 alt=""
-                aria-hidden="true"
+
               />
             )}
           </span>
