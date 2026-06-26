@@ -27,7 +27,8 @@
 }
 
 .bundleBuilder-stepperButton--increment {
-  background: #eef1f4;
+  background: #F0F4F7;
+  font-size: 8px;
 }
 
 .bundleBuilder-stepperButton:disabled {
