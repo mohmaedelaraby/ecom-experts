@@ -22,6 +22,7 @@ export interface Product {
   defaultVariantId: string | null;
   initialQuantities: InitialQuantities;
   lockedQuantity?: boolean;
+  maxQuantity?: number;
 }
 
 export interface Step {
@@ -82,6 +83,7 @@ export interface ReviewLineItem {
   compareAtLineTotal: number | null;
   priceLabel: string | null;
   lockedQuantity: boolean;
+  maxQuantity?: number;
 }
 
 export interface BundleTotals {

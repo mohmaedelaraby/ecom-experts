@@ -76,6 +76,7 @@ function ReviewPanel() {
                       setQuantity(item.productId, item.variantId, next)
                     }
                     disabled={item.lockedQuantity}
+                    max={item.maxQuantity}
                     label={`${item.name} quantity`}
                     size="small"
                   />

@@ -100,6 +100,7 @@ function ProductCard({ product, stepId }: ProductCardProps) {
               quantity={quantity}
               onChange={handleQuantityChange}
               disabled={isLocked}
+              max={product.maxQuantity}
               label={`${product.name} quantity`}
             />
 

@@ -23,7 +23,8 @@
            { "id": "gray", "label": "Gray", "swatch": "#9a9a9a", "image": "/products/wyze-battery-cam-pro.png" }
           ],
           "defaultVariantId": "white",
-          "initialQuantities": { "white": 2 }
+          "initialQuantities": { "white": 2 },
+          "maxQuantity": 6
         },
         {
           "id": "wyze-cam-pan-v3",

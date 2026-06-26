@@ -33,6 +33,7 @@
 .bundleBuilder-stepperButton:disabled {
   cursor: not-allowed;
   color: #c0c0c0;
+  opacity: 0.5;
 }
 
 .bundleBuilder-stepperButton--decrement:disabled {

@@ -94,6 +94,7 @@ function computeReviewLineItems(
             product.compareAtPrice != null ? product.compareAtPrice * quantity : null,
           priceLabel: product.priceLabel ?? null,
           lockedQuantity: product.lockedQuantity === true,
+          maxQuantity: product.maxQuantity,
         });
       }
     }
