@@ -51,13 +51,7 @@ export interface ReviewFinancing {
 }
 
 export interface Review {
-  title: string;
-  description: string;
   shipping: ReviewShipping;
-  guarantee: ReviewGuarantee;
-  financing: ReviewFinancing;
-  checkoutLabel: string;
-  saveForLaterLabel: string;
 }
 
 export interface CatalogResponse {

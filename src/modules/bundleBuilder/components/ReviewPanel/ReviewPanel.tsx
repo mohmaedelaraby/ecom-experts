@@ -33,8 +33,10 @@ function ReviewPanel() {
         </div>
       )}
       <p className="bundleBuilder-reviewHeader">Review </p>
-      <p className="bundleBuilder-reviewTitle">{REVIEW_CONTENT.title}</p>
-      <p className="bundleBuilder-reviewDescription">{REVIEW_CONTENT.description}</p>
+      <p className="bundleBuilder-reviewTitle">Your security system</p>
+      <p className="bundleBuilder-reviewDescription">
+        Review your personalized protection system designed to keep what matters most safe.
+      </p>
 
       <div className="bundleBuilder-reviewLineItems">
         {CATEGORY_ORDER.filter((category) => (grouped.get(category) ?? []).length > 0).map(
@@ -120,13 +122,13 @@ function ReviewPanel() {
         <div className="bundleBuilder-guaranteeBlock">
           <img
             src={satisfactionBadgeIcon}
-            alt={`${REVIEW_CONTENT.guarantee.label} — ${REVIEW_CONTENT.guarantee.sublabel}`}
+            alt="satisfaction icon"
             className="bundleBuilder-guaranteeIcon"
           />
           <div className="bundleBuilder-guaranteeSide">
             <div className="bundleBuilder-financingBadgeWrap">
               <span className="bundleBuilder-financingBadge">
-                {REVIEW_CONTENT.financing.label}
+                Call as low as $19.99/mo
               </span>
             </div>
 
@@ -158,7 +160,7 @@ function ReviewPanel() {
           className="bundleBuilder-checkoutButton"
           onClick={handleCheckout}
         >
-          {REVIEW_CONTENT.checkoutLabel}
+          Checkout
         </button>
 
         <button
@@ -166,7 +168,7 @@ function ReviewPanel() {
           className="bundleBuilder-saveForLaterButton"
           onClick={handleSaveForLater}
         >
-          {REVIEW_CONTENT.saveForLaterLabel}
+          Save my system for later
         </button>
       </div>
     </aside>
