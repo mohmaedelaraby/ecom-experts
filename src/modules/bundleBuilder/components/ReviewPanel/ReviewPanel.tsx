@@ -4,13 +4,9 @@ import shippingIcon from '../../../../assets/icons/Wyze Sense Keypad.png';
 import { useReviewPanel } from '../../shares/hooks/ReviewPanel.hooks';
 import { formatCurrency, REVIEW_CONTENT } from '../../shares/utils/bundleBuilder.utils';
 import '../../shares/styles/ReviewPanel.css';
+import { CATEGORY_LABELS } from '../../shares/models/bundleBuilder.models';
 
-const CATEGORY_LABELS: Record<string, string> = {
-  cameras: 'Cameras',
-  plan: 'Plan',
-  sensors: 'Sensors',
-  accessories: 'Accessories',
-};
+
 
 const CATEGORY_ORDER = ['cameras', 'sensors', 'accessories', 'plan'];
 

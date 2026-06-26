@@ -132,3 +132,28 @@ export interface ProductCardProps {
   product: Product;
   stepId: string;
 }
+
+export const CATEGORY_LABELS: Record<string, string> = {
+  cameras: 'Cameras',
+  plan: 'Plan',
+  sensors: 'Sensors',
+  accessories: 'Accessories',
+};
+
+export interface QuantityStepperProps {
+  quantity: number;
+  onChange: (next: number) => void;
+  disabled?: boolean;
+  min?: number;
+  max?: number;
+  label?: string;
+  size?: 'default' | 'small';
+}
+
+export interface UseQuantityStepperArgs {
+  quantity: number;
+  onChange: (next: number) => void;
+  disabled: boolean;
+  min: number;
+  max: number;
+}

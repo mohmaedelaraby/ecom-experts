@@ -1,10 +1,4 @@
-interface UseQuantityStepperArgs {
-  quantity: number;
-  onChange: (next: number) => void;
-  disabled: boolean;
-  min: number;
-  max: number;
-}
+import type { UseQuantityStepperArgs } from "../models/bundleBuilder.models";
 
 function useQuantityStepper({
   quantity,

@@ -1,16 +1,9 @@
 import { Minus, Plus } from 'lucide-react';
 import { useQuantityStepper } from '../../shares/hooks/QuantityStepper.hooks';
 import '../../shares/styles/QuantityStepper.css';
+import type { QuantityStepperProps } from '../../shares/models/bundleBuilder.models';
 
-interface QuantityStepperProps {
-  quantity: number;
-  onChange: (next: number) => void;
-  disabled?: boolean;
-  min?: number;
-  max?: number;
-  label?: string;
-  size?: 'default' | 'small';
-}
+
 
 function QuantityStepper({
   quantity,

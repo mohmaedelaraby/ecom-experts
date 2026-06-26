@@ -60,7 +60,6 @@ function ProductCard({ product, stepId }: ProductCardProps) {
             <div
               className="bundleBuilder-variantCardRow"
               role="group"
-              aria-label="Color"
             >
               {product.variants.map((variant) => (
                 <button
