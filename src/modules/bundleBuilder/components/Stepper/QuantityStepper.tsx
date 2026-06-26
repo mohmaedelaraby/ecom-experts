@@ -1,4 +1,5 @@
 import { Minus, Plus } from 'lucide-react';
+import { useQuantityStepper } from '../../shares/hooks/QuantityStepper.hooks';
 import '../../shares/styles/QuantityStepper.css';
 
 interface QuantityStepperProps {
@@ -20,15 +21,13 @@ function QuantityStepper({
   label = 'Quantity',
   size = 'default',
 }: QuantityStepperProps) {
-  const handleDecrement = () => {
-    if (disabled) return;
-    onChange(Math.max(min, quantity - 1));
-  };
-
-  const handleIncrement = () => {
-    if (disabled) return;
-    onChange(Math.min(max, quantity + 1));
-  };
+  const { handleDecrement, handleIncrement } = useQuantityStepper({
+    quantity,
+    onChange,
+    disabled,
+    min,
+    max,
+  });
 
   return (
     <div

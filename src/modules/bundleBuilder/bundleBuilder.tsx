@@ -1,18 +1,10 @@
-import { useEffect } from 'react';
 import { AccordionStep } from './components/Accordion/AccordionStep';
 import { ReviewPanel } from './components/ReviewPanel/ReviewPanel';
-import { useBundleBuilderStore } from './shares/store/bundleBuilder.store';
+import { useBundleBuilder } from './shares/hooks/BundleBuilder.hooks';
 import './shares/styles/bundleBuilder.css';
 
 function BundleBuilder() {
-  const fetchCatalog = useBundleBuilderStore((state) => state.fetchCatalog);
-  const catalog = useBundleBuilderStore((state) => state.catalog);
-  const isLoading = useBundleBuilderStore((state) => state.isLoading);
-  const error = useBundleBuilderStore((state) => state.error);
-
-  useEffect(() => {
-    fetchCatalog();
-  }, [fetchCatalog]);
+  const { catalog, isLoading, error } = useBundleBuilder();
 
   if (isLoading && !catalog) {
     return (

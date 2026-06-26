@@ -1,7 +1,6 @@
-import { useMemo } from 'react';
 import { ProductCard } from '../ProductCard/ProductCard';
-import { useBundleBuilderStore } from '../../shares/store/bundleBuilder.store';
-import type { Step } from '../../shares/interfaces/bundleBuilder.interfaces';
+import { useAccordionStep } from '../../shares/hooks/AccordionStep.hooks';
+import type { Step } from '../../shares/models/bundleBuilder.models';
 import cameraIcon from '../../../../assets/icons/livestream.svg';
 import shieldIcon from '../../../../assets/icons/logo_hms_new 1.svg';
 import radioIcon from '../../../../assets/icons/Group 1417.svg';
@@ -21,33 +20,10 @@ const ICONS_BY_KEY: Record<string, string> = {
 };
 
 function AccordionStep({ step }: AccordionStepProps) {
-  const openStepId = useBundleBuilderStore((state) => state.openStepId);
-  const setOpenStepId = useBundleBuilderStore((state) => state.setOpenStepId);
-  const selectedCount = useBundleBuilderStore((state) =>
-    state.getSelectedCountForStep(step.id),
-  );
-  const catalog = useBundleBuilderStore((state) => state.catalog);
+  const { isOpen, selectedCount, nextStep, handleToggle, handleNext } =
+    useAccordionStep(step);
 
-  const isOpen = openStepId === step.id;
   const iconSrc = ICONS_BY_KEY[step.icon] ?? shieldIcon;
-
-  const nextStep = useMemo(() => {
-    if (!catalog) return null;
-    const idx = catalog.steps.findIndex((s) => s.id === step.id);
-    return catalog.steps[idx + 1] ?? null;
-  }, [catalog, step.id]);
-
-  const handleToggle = () => {
-    setOpenStepId(isOpen ? null : step.id);
-  };
-
-  const handleNext = () => {
-    if (nextStep) {
-      setOpenStepId(nextStep.id);
-    } else {
-      setOpenStepId(null);
-    }
-  };
 
   return (
     <section

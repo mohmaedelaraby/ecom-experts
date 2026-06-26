@@ -4,7 +4,7 @@ import {
   buildQuantityKey,
   BundleBuilderServiceError,
 } from '../services/bundleBuilder.service';
-import { NO_VARIANT_KEY } from '../interfaces/bundleBuilder.interfaces';
+import { NO_VARIANT_KEY } from '../models/bundleBuilder.models';
 import { REVIEW_CONTENT } from '../utils/bundleBuilder.utils';
 import type {
   BundleBuilderStore,
@@ -14,7 +14,7 @@ import type {
   Product,
   QuantityMap,
   ReviewLineItem,
-} from '../interfaces/bundleBuilder.interfaces';
+} from '../models/bundleBuilder.models';
 
 const STORAGE_KEY = 'ecom-experts:bundle-system';
 

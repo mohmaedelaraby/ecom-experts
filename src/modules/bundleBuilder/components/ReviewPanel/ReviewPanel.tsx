@@ -1,14 +1,8 @@
-import { useMemo, useState } from 'react';
 import { QuantityStepper } from '../Stepper/QuantityStepper';
 import satisfactionBadgeIcon from '../../../../assets/icons/Satisfaction Badge-05 1.png';
 import shippingIcon from '../../../../assets/icons/Wyze Sense Keypad.png';
-import {
-  useBundleBuilderStore,
-  computeReviewLineItems,
-  computeTotals,
-} from '../../shares/store/bundleBuilder.store';
+import { useReviewPanel } from '../../shares/hooks/ReviewPanel.hooks';
 import { formatCurrency, REVIEW_CONTENT } from '../../shares/utils/bundleBuilder.utils';
-import type { ReviewLineItem } from '../../shares/interfaces/bundleBuilder.interfaces';
 import '../../shares/styles/ReviewPanel.css';
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -21,41 +15,19 @@ const CATEGORY_LABELS: Record<string, string> = {
 const CATEGORY_ORDER = ['cameras', 'sensors', 'accessories', 'plan'];
 
 function ReviewPanel() {
-  const catalog = useBundleBuilderStore((state) => state.catalog);
-  const quantities = useBundleBuilderStore((state) => state.quantities);
-  const setQuantity = useBundleBuilderStore((state) => state.setQuantity);
-  const saveForLater = useBundleBuilderStore((state) => state.saveForLater);
-  const [savedMessage, setSavedMessage] = useState<string | null>(null);
-
-  const lineItems = useMemo(
-    () => computeReviewLineItems(catalog, quantities),
-    [catalog, quantities],
-  );
-  const totals = useMemo(() => computeTotals(catalog, lineItems), [catalog, lineItems]);
-
-  const grouped = useMemo(() => {
-    const map = new Map<string, ReviewLineItem[]>();
-    for (const item of lineItems) {
-      const list = map.get(item.category) ?? [];
-      list.push(item);
-      map.set(item.category, list);
-    }
-    return map;
-  }, [lineItems]);
+  const {
+    catalog,
+    grouped,
+    totals,
+    savedMessage,
+    setQuantity,
+    handleCheckout,
+    handleSaveForLater,
+  } = useReviewPanel();
 
   if (!catalog) {
     return null;
   }
-
-  const handleCheckout = () => {
-    window.alert('This is a placeholder checkout. No order was actually placed.');
-  };
-
-  const handleSaveForLater = () => {
-    saveForLater();
-    setSavedMessage('Your system has been saved!');
-    window.setTimeout(() => setSavedMessage(null), 3000);
-  };
 
   return (
     <aside className="bundleBuilder-reviewPanel" aria-label="Your security system">

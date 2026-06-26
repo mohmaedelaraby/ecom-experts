@@ -1,4 +1,4 @@
-import type { Review } from '../interfaces/bundleBuilder.interfaces';
+import type { Review } from '../models/bundleBuilder.models';
 
 const CURRENCY_FORMATTER = new Intl.NumberFormat('en-US', {
   style: 'currency',

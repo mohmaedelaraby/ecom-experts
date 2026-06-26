@@ -1,10 +1,10 @@
 import { getCatalog } from '../api/bundleBuilder.api';
-import { NO_VARIANT_KEY } from '../interfaces/bundleBuilder.interfaces';
+import { NO_VARIANT_KEY } from '../models/bundleBuilder.models';
 import type {
   ActiveVariantMap,
   CatalogResponse,
   QuantityMap,
-} from '../interfaces/bundleBuilder.interfaces';
+} from '../models/bundleBuilder.models';
 
 export class BundleBuilderServiceError extends Error {
   readonly cause?: unknown;

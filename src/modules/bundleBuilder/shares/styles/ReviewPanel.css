@@ -229,18 +229,15 @@
 .bundleBuilder-saveForLaterButton {
   width: 100%;
   background: transparent;
-  border: 1px solid #1F1F1F;
-  border-radius: 8px;
-  padding: 12px 20px;
+  text-decoration: underline;
+  text-align: center;
   font-size: 14px;
-  font-weight: 600;
-  color: #5b4fe5;
+  font-weight: 400;
+  color: #484848;
   cursor: pointer;
+  font-style: italic;
 }
 
-.bundleBuilder-saveForLaterButton:hover {
-  background: #f7f6ff;
-}
 
 .bundleBuilder-savedMessage {
   text-align: center;
