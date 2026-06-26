@@ -259,6 +259,23 @@
   background: #4a3fd0;
 }
 
+.bundleBuilder-checkoutToast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0AA288;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 8px;
+  white-space: nowrap;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
 .bundleBuilder-saveForLaterButton {
   width: 100%;
   background: transparent;
@@ -270,12 +287,4 @@
   color: #484848;
   cursor: pointer;
   font-style: italic;
-}
-
-
-.bundleBuilder-savedMessage {
-  text-align: center;
-  font-size: 12px;
-  color: #2fa364;
-  margin: 0;
 }

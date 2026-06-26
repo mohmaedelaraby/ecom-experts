@@ -19,7 +19,7 @@ function ReviewPanel() {
     catalog,
     grouped,
     totals,
-    savedMessage,
+    toast,
     setQuantity,
     handleCheckout,
     handleSaveForLater,
@@ -31,6 +31,11 @@ function ReviewPanel() {
 
   return (
     <aside className="bundleBuilder-reviewPanel" aria-label="Your security system">
+      {toast && (
+        <div className="bundleBuilder-checkoutToast" role="status">
+          {toast}
+        </div>
+      )}
       <p className="bundleBuilder-reviewHeader">Review </p>
       <p className="bundleBuilder-reviewTitle">{REVIEW_CONTENT.title}</p>
       <p className="bundleBuilder-reviewDescription">{REVIEW_CONTENT.description}</p>
@@ -167,12 +172,6 @@ function ReviewPanel() {
         >
           {REVIEW_CONTENT.saveForLaterLabel}
         </button>
-
-        {savedMessage && (
-          <p className="bundleBuilder-savedMessage" role="status">
-            {savedMessage}
-          </p>
-        )}
       </div>
     </aside>
   );

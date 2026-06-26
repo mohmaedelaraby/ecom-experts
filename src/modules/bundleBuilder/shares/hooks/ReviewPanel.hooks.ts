@@ -11,7 +11,7 @@ function useReviewPanel() {
   const quantities = useBundleBuilderStore((state) => state.quantities);
   const setQuantity = useBundleBuilderStore((state) => state.setQuantity);
   const saveForLater = useBundleBuilderStore((state) => state.saveForLater);
-  const [savedMessage, setSavedMessage] = useState<string | null>(null);
+  const [toast, setToast] = useState<string | null>(null);
 
   const lineItems = useMemo(
     () => computeReviewLineItems(catalog, quantities),
@@ -30,20 +30,21 @@ function useReviewPanel() {
   }, [lineItems]);
 
   const handleCheckout = () => {
-    window.alert('This is a placeholder checkout. No order was actually placed.');
+    setToast('Checkout is done successfully');
+    window.setTimeout(() => setToast(null), 3000);
   };
 
   const handleSaveForLater = () => {
     saveForLater();
-    setSavedMessage('Your system has been saved!');
-    window.setTimeout(() => setSavedMessage(null), 3000);
+    setToast('Saved successfully for later');
+    window.setTimeout(() => setToast(null), 3000);
   };
 
   return {
     catalog,
     grouped,
     totals,
-    savedMessage,
+    toast,
     setQuantity,
     handleCheckout,
     handleSaveForLater,
