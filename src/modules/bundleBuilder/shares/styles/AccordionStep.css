@@ -10,7 +10,7 @@
 
 .bundleBuilder-accordionStep.bundleBuilder-accordionStep--open {
   background: #EDF4FF;
-  border-radius: 12px;
+  border-radius: 10px;
   border-bottom: none;
   margin: 8px;
   overflow: hidden;
@@ -35,19 +35,20 @@
   padding-bottom: 5px;
   padding-right: 15px;
   padding-left: 15px;
+    border-bottom: 0.5px solid #1F1F1F;
 }
 
 .bundleBuilder-accordionStep--open .bundleBuilder-stepEyebrowRow {
-  border-bottom: 1px solid #1F1F1F;
+  border-bottom: 0.5px solid #1F1F1F;
 }
 
 .bundleBuilder-accordionHeaderLeft {
-  padding: 0px 20px;
+  padding: 0px 15px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 15px;
 }
 
 .bundleBuilder-stepEyebrow {
@@ -60,7 +61,8 @@
 .bundleBuilder-stepTitleRow {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  padding: 5px 0px;
 }
 
 .bundleBuilder-stepIcon {
@@ -134,9 +136,9 @@
   color: #4E2FD2;
   border: 1px solid #4E2FD2;
   border-radius: 8px;
-  padding: 14px 20px;
-  font-size: 15px;
-  font-weight: 600;
+  padding: 8px 24px;
+  font-size: 18px;
+  font-weight: 400;
   cursor: pointer;
   transition: background-color 0.15s ease;
 }

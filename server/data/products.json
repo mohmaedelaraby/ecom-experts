@@ -23,7 +23,7 @@
            { "id": "gray", "label": "Gray", "swatch": "#9a9a9a", "image": "/products/wyze-battery-cam-pro.png" }
           ],
           "defaultVariantId": "white",
-          "initialQuantities": { "white": 1 }
+          "initialQuantities": { "white": 2 }
         },
         {
           "id": "wyze-cam-pan-v3",
@@ -99,7 +99,7 @@
           "id": "cam-unlimited",
           "name": "Cam Unlimited",
           "description": "Call as low as $9.99/mo. Unlimited cloud recording for every camera.",
-          "image": "/products/cam-unlimited.svg",
+          "image": "/products/plan.svg",
           "learnMoreUrl": "#",
           "badge": null,
           "compareAtPrice": 12.99,

@@ -16,7 +16,7 @@
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 0px;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .bundleBuilder-reviewDescription {
@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .bundleBuilder-reviewGroup {
@@ -48,8 +48,9 @@
 .bundleBuilder-reviewGroupTitle {
   font-size: 12px;
   font-weight: 400;
+  line-height: 16px;
   text-transform: uppercase;
-  color: #8a8a8a;
+  color: #A8B2BD;
   margin: 0;
 }
 
@@ -68,6 +69,10 @@
   background: #fafafa;
   flex-shrink: 0;
 }
+.bundleBuilder-reviewThumb--plan{
+  background: transparent;
+  border: none;
+}
 
 .bundleBuilder-reviewLineInfo {
   flex-grow: 1;
@@ -75,13 +80,34 @@
 }
 
 .bundleBuilder-reviewLineName {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.bundleBuilder-reviewLineName--plan {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1F1F1F;
+  white-space: normal;
+}
+
+.bundleBuilder-reviewLineName-cam {
+  color: #1F1F1F;
+  font-weight: 700;
+}
+
+.bundleBuilder-reviewLineName-unlimited {
+  color: #4E2FD2;
+  font-weight: 700;
+}
+
 
 .bundleBuilder-reviewLinePricing {
   display: flex;
@@ -99,9 +125,11 @@
 }
 
 .bundleBuilder-reviewLineComparePrice {
-  font-size: 12px;
-  color: #9a9a9a;
+  font-size: 14px;
+  color: #6F7882;
+  font-weight: 400;
   text-decoration: line-through;
+  text-align: right;
 }
 
 .bundleBuilder-reviewExtras {
@@ -109,7 +137,6 @@
   padding-top: 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
 }
 
 .bundleBuilder-reviewRow {
@@ -118,6 +145,7 @@
   justify-content: space-between;
   font-size: 13px;
   color: #4a4a4a;
+  margin-bottom: 10px;
 }
 
 .bundleBuilder-reviewRowValue {
@@ -148,6 +176,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
 .bundleBuilder-guaranteeIcon {
@@ -173,9 +202,10 @@
   color: #ffffff;
   font-size: 12px;
   font-weight: 400;
-  padding: 5px 10px;
+  padding: 3px 8px;
   border-radius: 3px;
   white-space: nowrap;
+  margin-top: 2px;
 }
 
 .bundleBuilder-totalRow {
@@ -204,7 +234,7 @@
 
 .bundleBuilder-savingsCallout {
   font-size: 12px;
-  color: #2fa364;
+  color: #0AA288;
   font-weight: 400;
   margin: 0;
   text-align: center;
@@ -212,14 +242,17 @@
 
 .bundleBuilder-checkoutButton {
   width: 100%;
-  background: #5b4fe5;
+  background: #4E2FD2;
+  font-family: sans-serif;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
-  padding: 14px 20px;
-  font-size: 15px;
+  border-radius: 4px;
+  padding: 13px 16px;
+  font-size: 17px;
   font-weight: 700;
   cursor: pointer;
+  margin-top: 4px;
+  margin-bottom: 8px;
 }
 
 .bundleBuilder-checkoutButton:hover {
@@ -230,6 +263,7 @@
   width: 100%;
   background: transparent;
   text-decoration: underline;
+  border: none;
   text-align: center;
   font-size: 14px;
   font-weight: 400;

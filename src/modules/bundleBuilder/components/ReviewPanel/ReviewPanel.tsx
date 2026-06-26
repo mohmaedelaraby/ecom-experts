@@ -48,15 +48,27 @@ function ReviewPanel() {
                   className="bundleBuilder-reviewLine"
                 >
                   <img
-                    className="bundleBuilder-reviewThumb"
+                    className={category === 'plan' ? 'bundleBuilder-reviewThumb bundleBuilder-reviewThumb--plan' : 'bundleBuilder-reviewThumb'}
                     src={item.image}
                     alt={item.name}
                   />
                   <div className="bundleBuilder-reviewLineInfo">
-                    <span className="bundleBuilder-reviewLineName">
-                      {item.name}
-                      {item.variantLabel ? ` — ${item.variantLabel}` : ''}
-                    </span>
+                    {category === 'plan' ? (
+                      <span className="bundleBuilder-reviewLineName bundleBuilder-reviewLineName--plan">
+                        <span className="bundleBuilder-reviewLineName-cam">
+                          {item.name.split(' ')[0]}
+                        </span>{' '}
+                        <span className="bundleBuilder-reviewLineName-unlimited">
+                          {item.name.split(' ').slice(1).join(' ')}
+                        </span>
+                        {item.variantLabel ? ` — ${item.variantLabel}` : ''}
+                      </span>
+                    ) : (
+                      <span className="bundleBuilder-reviewLineName">
+                        {item.name}
+                        {item.variantLabel ? ` — ${item.variantLabel}` : ''}
+                      </span>
+                    )}
                   </div>
                   <QuantityStepper
                     quantity={item.quantity}
