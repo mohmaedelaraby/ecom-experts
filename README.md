@@ -5,7 +5,7 @@ A multi-step bundle builder for a home security system, built as a React take-ho
 ## Stack
 
 - **Client**: Vite + React 19 + TypeScript, Zustand for state, Axios for data fetching, `lucide-react` for icons, plain CSS (no Tailwind/CSS-in-JS).
-- **Server**: a minimal Express app that serves the product catalog from a local JSON file via `GET /api/products`. No database — this is intentionally the "bonus" backend requirement at its simplest: a thin read-only API in front of a JSON file.
+- **Server**: a minimal Express app that serves the product catalog from a local JSON file via `GET /api/products`. No database .
 - **Persistence**: "Save my system for later" writes the full configuration (quantities, active variants, open accordion step) to `localStorage`. On load, if a saved config exists, it's merged over the catalog's seeded defaults so a returning visitor sees exactly what they left.
 
 ## Run instructions
@@ -44,9 +44,16 @@ ecom-experts/
       services/                # business logic / data-transform, called by the store
       store/                   # Zustand store — all UI + derived state lives here
       models/                  # TypeScript types, split per-component (e.g. ProductCard.models.ts)
-      utils/, hooks/
+      utils/,                  # any helper functions
+      hooks/                   # excute call and seprate logic and import from ui layer
   server/
-    index.js                   # Express app, one route: GET /api/products
+    index.js                   # Express app entry point, mounts module routers
+    modules/
+      static-data/             # one module per API resource
+        routes/                # express.Router() — maps HTTP verbs/paths to a controller
+        controller/             # req/res handling, delegates to a service
+        services/               # business logic, called by the controller
+        repo/                   # data access — reads from data/products.json
     data/products.json         # the catalog — steps, products, variants, review copy
   public/products/              # placeholder SVG product images
 ```
@@ -60,9 +67,5 @@ ecom-experts/
 
 ## What I didn't do / known gaps
 
-- **Figma fidelity is approximate, not pixel-exact.** I built this from a set of exported screenshots rather than live Figma inspect values (no Figma API access), so exact spacing/typography/hex values are eyeballed, not measured. Colors (purple/indigo accent, orange-red selected border), border radii, and layout proportions are close approximations.
 - **Product images are placeholder SVGs**, not real product photography — there was no asset export available, so I generated simple placeholder graphics per product.
-- **Some product data (prices, badges, which products have which variants) is inferred from a single mid-resolution Figma export** and may not match the source design exactly down to the cent — the behavior and structure are accurate, the specific numbers are best-effort.
-- **Checkout is a placeholder** (a success toast, no real navigation or order flow), as the spec allows.
-- **No automated test suite** — verification was done via a manual Playwright script exercising the accordion, variant/quantity sync, totals, and save/reload persistence, plus visual screenshot review at desktop and mobile widths. Given more time, I'd add component tests around the store's quantity/variant logic (highest-risk area) and a couple of Playwright e2e specs.
 - **No server-side persistence** — "Save my system for later" is `localStorage`-only, per the spec; the Express backend only serves the read-only catalog.
