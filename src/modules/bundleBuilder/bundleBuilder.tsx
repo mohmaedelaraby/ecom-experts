@@ -1,6 +1,6 @@
 import { AccordionStep } from './components/Accordion/AccordionStep';
 import { ReviewPanel } from './components/ReviewPanel/ReviewPanel';
-import { useBundleBuilder } from './shares/hooks/BundleBuilder.hooks';
+import { useBundleBuilder } from './shares/hooks/bundleBuilder.hooks';
 import './shares/styles/bundleBuilder.css';
 
 function BundleBuilder() {
